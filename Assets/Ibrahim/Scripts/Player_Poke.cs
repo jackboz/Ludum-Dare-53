@@ -15,7 +15,8 @@ public class Player_Poke : MonoBehaviour
         int layerMask = 1 << 6;
         Collider[] coll = Physics.OverlapSphere(spherePos.position, sphereRadius, layerMask);
         if (coll.Length == 0) return;
-        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(Vector3.forward);
+        Debug.Log(transform.forward);
+        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(transform.forward);
         StartCoroutine(cooldown());
     }
 
