@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 785222611}
   - component: {fileID: 785222610}
   - component: {fileID: 785222612}
+  - component: {fileID: 785222613}
   m_Layer: 0
   m_Name: car_root
   m_TagString: Untagged
@@ -761,6 +762,19 @@ MonoBehaviour:
   - {fileID: 625532806}
   - {fileID: 194006800}
   cube: {fileID: 785222611}
+--- !u!114 &785222613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785222609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1191984fa838de4ba010ea34a684fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stuff: 3
 --- !u!1 &790106397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,8 +2224,8 @@ GameObject:
   - component: {fileID: 1991188816}
   - component: {fileID: 1991188815}
   - component: {fileID: 1991188814}
-  - component: {fileID: 1991188818}
   - component: {fileID: 1991188819}
+  - component: {fileID: 1991188818}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
