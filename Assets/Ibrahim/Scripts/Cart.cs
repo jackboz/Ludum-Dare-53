@@ -24,4 +24,10 @@ public class Cart : MonoBehaviour, IPokeble
     {
         goodsAmount += amount;
     }
+
+    
+    private void Update()
+    {
+        Camera.main.transform.position = new Vector3(0, 15, transform.position.z -10);
+    }
 }
