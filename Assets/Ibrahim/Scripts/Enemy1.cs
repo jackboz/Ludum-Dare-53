@@ -5,7 +5,6 @@ public class Enemy1 : MonoBehaviour, IPokeble
 {
     int health = 1;
     Crate cart;
-    Enemy_Spawner spawner;
     NavMeshAgent agent;
     MeshRenderer mesh;
     [HideInInspector] public bool hasTheGoods;
@@ -13,8 +12,6 @@ public class Enemy1 : MonoBehaviour, IPokeble
 
     void Start()
     {
-
-        spawner = FindObjectOfType<Enemy_Spawner>();
         mesh = GetComponent<MeshRenderer>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
