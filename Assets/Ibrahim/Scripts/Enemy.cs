@@ -1,44 +1,28 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Enemy : MonoBehaviour, IPokeble
+public class Enemy : MonoBehaviour
 {
-    int health = 1;
-    Cart cart;
+    Crate cart;
     Enemy_Spawner spawner;
-    Inventory _playerInventory;
     NavMeshAgent agent;
-    [SerializeField] private Transform stuffDestination;
-    [HideInInspector] public bool hasStuff;
 
     void Start()
     {
+
         spawner = FindObjectOfType<Enemy_Spawner>();
         agent = GetComponent<NavMeshAgent>();
-        cart = FindObjectOfType<Cart>();
-        _playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
+        cart = FindObjectOfType<Crate>();
+        agent.speed = agent.speed + Random.Range(-.5f, .5f);
     }
 
     private void FixedUpdate()
     {
-        agent.SetDestination(cart.transform.position);
-
-        if(Vector3.Distance(cart.transform.position, transform.position) < 3 && !hasStuff)
-        {
-            cart.StealGoods();
-            hasStuff = true;
-        }
-        if(hasStuff) agent.SetDestination(stuffDestination.position);
+        if (transform.position.z < cart.transform.position.z - 30) { Destroy(gameObject); }
     }
 
-    public void OnPoke(Vector3 impulse)
+    private void OnDestroy()
     {
-        health--;
-        if (health <= 0)
-        {
-            spawner.enemyList.Remove(this);
-            if (hasStuff) _playerInventory.AddGoods();
-            Destroy(gameObject);
-        }
+        spawner.enemyList.Remove(this);
     }
 }
