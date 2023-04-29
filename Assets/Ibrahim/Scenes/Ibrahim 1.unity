@@ -605,7 +605,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 814566550}
   strength: 10
-  goodsAmount: 0
 --- !u!54 &814566550
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1152,6 +1151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b44fafd9f8084886ea2cf48a0d0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  returnDistance: 3
   spherePos: {fileID: 106989972}
   sphereRadius: 1
   cooldownTime: 0.4
@@ -1216,6 +1216,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1032516028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032516021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f2aa13db028e14b95918757bee318f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058228721
 GameObject:
   m_ObjectHideFlags: 0
