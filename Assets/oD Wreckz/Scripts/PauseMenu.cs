@@ -4,13 +4,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool isPaused = false;
-    public PlayerController playerController;
+    public Pausemenuplaceholder playerController;
     public GameObject pauseMenuUI;
 
     //Get the player script
     private void Start()
     {
-        playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController = GameObject.Find("Player").GetComponent<Pausemenuplaceholder>();
     }
 
     // Update is called once per frame
