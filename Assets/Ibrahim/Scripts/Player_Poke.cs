@@ -3,10 +3,28 @@ using UnityEngine;
 
 public class Player_Poke : MonoBehaviour
 {
+    public float returnDistance = 3f;
     [SerializeField] private Transform spherePos;
     [SerializeField] private float sphereRadius;
     [SerializeField] private float cooldownTime;
     [SerializeField] private bool isCoolingDown;
+
+    Inventory playerInventory;
+    Cart cart;
+
+    private void Awake()
+    {
+        cart = FindObjectOfType<Cart>();
+        playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(transform.position, cart.transform.position) < returnDistance)
+        { 
+            playerInventory.ReturnGoods();
+        }
+    }
 
     public void OnPoke()
     {
