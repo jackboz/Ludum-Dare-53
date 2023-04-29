@@ -22,12 +22,17 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {  
-        rb.velocity = speed * Time.deltaTime * input;
+        
         Vector3 direction =  (transform.position + input)- transform.position;
         if(direction != Vector3.zero)
         {
             Quaternion rotation = Quaternion.LookRotation(direction);
             transform.rotation = rotation;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = speed * input;
     }
 }

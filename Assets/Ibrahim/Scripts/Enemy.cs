@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour, IPokeble
         cart = FindObjectOfType<Cart_Stuff>();
         agent.SetDestination(cart.transform.position);
 
-        if(Vector3.Distance(cart.transform.position, transform.position) < 1.5f && !hasStuff)
+        if(Vector3.Distance(cart.transform.position, transform.position) < 3 && !hasStuff)
         {
             cart.stuff -= 1;
             hasStuff = true;
