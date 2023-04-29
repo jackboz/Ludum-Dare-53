@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour, IPokeble
 {
     int health = 1;
     Cart cart;
+    Inventory _playerInventory;
     NavMeshAgent agent;
     [SerializeField] private Transform stuffDestination;
     [HideInInspector] public bool hasStuff;
@@ -13,6 +14,7 @@ public class Enemy : MonoBehaviour, IPokeble
     {
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Cart>();
+        _playerInventory = GameObject.Find("Player").GetComponent<Inventory>();
     }
 
     private void FixedUpdate()
@@ -21,7 +23,7 @@ public class Enemy : MonoBehaviour, IPokeble
 
         if(Vector3.Distance(cart.transform.position, transform.position) < 3 && !hasStuff)
         {
-            cart.goodsAmount-= 1;
+            cart.StealGoods();
             hasStuff = true;
         }
         if(hasStuff) agent.SetDestination(stuffDestination.position);
@@ -32,7 +34,7 @@ public class Enemy : MonoBehaviour, IPokeble
         health--;
         if (health <= 0)
         {
-            cart.goodsAmount += 1;
+            if (hasStuff) _playerInventory.AddGoods();
             Destroy(gameObject);
         }
     }

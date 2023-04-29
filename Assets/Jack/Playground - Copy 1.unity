@@ -320,6 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150b44fafd9f8084886ea2cf48a0d0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  returnDistance: 3
   spherePos: {fileID: 936638322}
   sphereRadius: 1
   cooldownTime: 1
@@ -372,6 +373,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &315729335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315729327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23f2aa13db028e14b95918757bee318f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &542508511
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +461,6 @@ GameObject:
   - component: {fileID: 743840027}
   - component: {fileID: 743840026}
   - component: {fileID: 743840029}
-  - component: {fileID: 743840028}
   m_Layer: 6
   m_Name: cart-0001
   m_TagString: Untagged
@@ -505,19 +517,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: -1}
---- !u!114 &743840028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743840024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1191984fa838de4ba010ea34a684fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stuff: 3
 --- !u!114 &743840029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,7 +531,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 743840026}
   strength: 10
-  goodsAmount: 0
 --- !u!1 &790106397
 GameObject:
   m_ObjectHideFlags: 0
