@@ -2,17 +2,15 @@ using UnityEngine;
 
 public class Cart : MonoBehaviour, IPokeble
 {
-    Player_Poke poke;
     Rigidbody body;
     [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private float strenght = 1000;
+    [SerializeField] private float strength = 1000;
     [SerializeField] private WheelCollider[] wheelColliders;
     [SerializeField] private Transform cube;
 
     private void Awake()
     {
         body = GetComponentInParent<Rigidbody>();
-        poke = FindObjectOfType<Player_Poke>();
     }
 
     private void FixedUpdate()
@@ -32,18 +30,9 @@ public class Cart : MonoBehaviour, IPokeble
         }
     }
 
-    public void OnPoke()
+    public void OnPoke(Vector3 impulse)
     {
         Debug.Log("OnPoke");
-        foreach (WheelCollider wheelCollider in wheelColliders)
-        {
-            float dotProduct = Vector3.Dot(poke.transform.forward, wheelCollider.transform.right);
-            // Calculate the steering angle based on the dot product and the maximum steering angle
-            float steeringAngle = 60 * dotProduct;
-            // Apply the calculated steering angle to the wheel collider
-            wheelCollider.steerAngle = steeringAngle;
-            Debug.Log(wheelCollider.steerAngle);
-        }
-        body.AddForce(poke.transform.forward.normalized * strenght, ForceMode.Impulse);
+        body.AddForce(transform.forward.normalized * strength, ForceMode.Impulse);
     }
 }

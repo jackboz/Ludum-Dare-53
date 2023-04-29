@@ -8,8 +8,9 @@ public class Player_Poke : MonoBehaviour
     public void OnPoke()
     {
         Debug.Log("OnPokeInput");
-        Collider[] coll = Physics.OverlapSphere(spherePos.position, sphereRadius);
+        int layerMask = 1 << 6;
+        Collider[] coll = Physics.OverlapSphere(spherePos.position, sphereRadius, layerMask);
         if (coll.Length == 0) return;
-        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke();
+        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(Vector3.forward);
     }
 }

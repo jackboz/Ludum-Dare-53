@@ -1,4 +1,6 @@
+using UnityEngine;
+
 public interface IPokeble 
 {
-    public void OnPoke();
+    public void OnPoke(Vector3 impulse);
 }
