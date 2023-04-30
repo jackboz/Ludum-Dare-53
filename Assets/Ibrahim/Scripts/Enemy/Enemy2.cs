@@ -31,7 +31,6 @@ public class Enemy2 : MonoBehaviour, IPokeble
         if (clipInfo.Length > 0)
         {
             currentStateName = clipInfo[0].clip.name;
-            Debug.Log("Current Animation State: " + currentStateName);
         }
         if (agent.velocity != Vector3.zero) animator.Play("Run");
         else

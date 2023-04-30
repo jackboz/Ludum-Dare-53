@@ -63,6 +63,11 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        camPos.transform.position = new Vector3(0, 0, transform.position.z - 10);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet") && !cooldown)
