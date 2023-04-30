@@ -95,7 +95,7 @@ public class Player_Movement : MonoBehaviour
         cooldown = true;
         yield return new WaitForSeconds(time);
         isDashing = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.7f);
         cooldown = false;
     }
 
