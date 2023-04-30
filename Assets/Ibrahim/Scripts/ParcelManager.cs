@@ -16,7 +16,7 @@ public class ParcelManager : MonoBehaviour
             pos.z += 18.8f;
             Instantiate(inBetween[Random.Range(0, inBetween.Length)], pos, Quaternion.identity);
         }
-        pos.z += 25;
+        pos.z += 18.8f;
         Instantiate(end, pos, Quaternion.identity);
     }
 }
