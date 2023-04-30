@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     {
         Destroy(GetComponent<Enemy1>());
         Destroy(GetComponent<Enemy2>());
+        Destroy(GetComponent<Collider>());
         Destroy(GetComponent<NavMeshAgent>());
         anim.Play("Death");
     }

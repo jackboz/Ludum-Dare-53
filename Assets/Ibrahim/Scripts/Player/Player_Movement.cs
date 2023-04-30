@@ -7,7 +7,9 @@ public class Player_Movement : MonoBehaviour
     private Rigidbody rb;
     private Crate cart;
     Animator animator;
+    Enemy_Spawner spawner;
 
+    int triggerCount;
     private Vector3 inputTemp;
     private Vector3 input;
     private bool isDashing;
@@ -24,8 +26,10 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool hasCrate;
     private SoundManager soundManager;
 
+
     private void Start()
     {
+        spawner = FindObjectOfType<Enemy_Spawner>();
         animator = GetComponent<Animator>();
         cart = FindObjectOfType<Crate>();
         rb = GetComponent<Rigidbody>();
@@ -39,7 +43,7 @@ public class Player_Movement : MonoBehaviour
         if (!isDashing) input = inputTemp;
         rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * input * speedMultiplie;
 
-        if(input == Vector3.zero && isDashing)
+        if (input == Vector3.zero && isDashing)
         {
             animator.Play("Drunk");
         }
@@ -85,6 +89,17 @@ public class Player_Movement : MonoBehaviour
             soundManager.PlayHitByShuriken();
             Destroy(other.gameObject);
         }
+
+        if(other.CompareTag("Trigger"))
+        {
+            Destroy(other.gameObject);
+            triggerCount++;
+
+            if(triggerCount % 2 == 0)
+            {
+                spawner.InitiateEnemyWave();
+            }
+        }
     }
 
     public void OnMove(InputValue value)
@@ -99,9 +114,9 @@ public class Player_Movement : MonoBehaviour
         Debug.Log("OnPokeInput");
         if (hasCrate || isCoolingDown) return;
         int layerMask = 1 << 6;
+        soundManager.PlayGirlAttackSounds();
         Collider[] coll = Physics.OverlapSphere(spherePos.position, sphereRadius, layerMask);
-        if (coll.Length == 0) return;
-        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(transform.forward);
+        if (coll.Length != 0) foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(transform.forward);
         StartCoroutine(PokeCooldown());
     }
 

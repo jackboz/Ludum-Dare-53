@@ -12,10 +12,8 @@ public class Enemy_Spawner : MonoBehaviour
     [SerializeField] private int enemyCount;
     [SerializeField] private int enemyCount2;
     [HideInInspector] public List<Enemy> enemyList;
-    [SerializeField] private float pauseBetweenWaves = 8f;
     public List<WaveDescription> waves;
     private int currentWave = 0;
-    private float timer = 0;
 
     private void Awake()
     {
@@ -24,27 +22,6 @@ public class Enemy_Spawner : MonoBehaviour
         if (wavesLabel) wavesLabel.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        if (enemyList.Count == 0)
-        {
-            if (currentWave < waves.Count)
-            {
-                timer += Time.deltaTime;
-                if (timer > pauseBetweenWaves)
-                {
-                    Debug.Log("New wave " + currentWave);
-                    InitiateEnemyWave();
-                    timer = 0;
-                }
-            }
-        }
-    }
-
-    IEnumerator WaitForSecs()
-    {
-        yield return new WaitForSeconds(pauseBetweenWaves);
-    }
     IEnumerator ShowWaveLabel(int waveNumber)
     {
         wavesLabel.SetText("Wave " + waveNumber);
@@ -53,7 +30,7 @@ public class Enemy_Spawner : MonoBehaviour
         wavesLabel.gameObject.SetActive(false);
     }
 
-    private void InitiateEnemyWave()
+    public void InitiateEnemyWave()
     {
         for (int i = 0; i < waves[currentWave].NumberOfEnemies1; i++)
         {
@@ -74,6 +51,7 @@ public class Enemy_Spawner : MonoBehaviour
     {
         Vector3 result;
         Vector3 carPos = cart.transform.position;
+
         switch (waves[currentWave].spawnType)
         {
             case WaveDescription.SpawnType.Front:
@@ -81,41 +59,33 @@ public class Enemy_Spawner : MonoBehaviour
                 break;
             case WaveDescription.SpawnType.FullCircle:
                 carPos.x = 0;
-                result = carPos + RandomPointOnCircle(12);
+                result = carPos + RandomPointOnCircle(10);
                 break;
             case WaveDescription.SpawnType.HalfFrontCircle:
                 carPos.x = 0;
-                result = carPos + RandomPointOnHalfFrontCircle(12);
+                result = carPos + RandomPointOnHalfFrontCircle(10);
                 break;
             default:
                 result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
                 break;
         }
-
         return result;
     }
 
 
     private Vector3 RandomPointOnCircle(int radius)
     {
-        float angle = Random.Range(0f, Mathf.PI * 2); // Random angle in radians
-
-        // Calculate the position on the circumference using trigonometry
+        float angle = Random.Range(0f, Mathf.PI * 2); 
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
-
         return new Vector3(x, 0, y);
     }
 
     private Vector3 RandomPointOnHalfFrontCircle(int radius)
     {
-        float angle = Random.Range(0f, Mathf.PI); // Random angle in radians
-
-        // Calculate the position on the circumference using trigonometry
+        float angle = Random.Range(0f, Mathf.PI); 
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
-
         return new Vector3(x, 0, y);
     }
-
 }

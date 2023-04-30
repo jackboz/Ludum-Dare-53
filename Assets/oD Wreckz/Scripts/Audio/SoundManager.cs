@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] bunTakenSounds;
     public AudioClip[] enemyDeathSounds;
     public AudioClip[] hitByShurikenSounds;
+    public AudioClip[] girlAttackSound;
 
     private AudioSource audioSource;
 
@@ -38,6 +39,15 @@ public class SoundManager : MonoBehaviour
         {
             int randomIndex = Random.Range(0, enemyDeathSounds.Length);
             audioSource.PlayOneShot(enemyDeathSounds[randomIndex]);
+        }
+    }
+
+    public void PlayGirlAttackSounds()
+    {
+        if (girlAttackSound.Length > 0)
+        {
+            int randomIndex = Random.Range(0, girlAttackSound.Length);
+            audioSource.PlayOneShot(girlAttackSound[randomIndex]);
         }
     }
 

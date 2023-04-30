@@ -2635,7 +2635,6 @@ MonoBehaviour:
   enemyCount: 2
   enemyCount2: 1
   enemyList: []
-  pauseBetweenWaves: 8
   waves:
   - {fileID: 11400000, guid: 774b9fb126d064743b2060ff8a1dd02a, type: 2}
   - {fileID: 11400000, guid: 422f7d29d7c02e44bb6bb4eea811ccea, type: 2}
@@ -2671,7 +2670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 2843525211915414008, guid: 7e9ff2033f6e1024881625734488a477, type: 3}
-  amountOfParcels: 3
+  amountOfParcels: 14
   inBetween:
   - {fileID: 2668124138659343321, guid: c8437e3bb2422fa49a4d07346aaf8063, type: 3}
   - {fileID: 2843525211915414008, guid: 895039787e66af543a186ced19d6a258, type: 3}
@@ -2712,7 +2711,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4b06cb70509318d4591f9f558c249ab3, type: 3}
   - {fileID: 8300000, guid: e0e940769e5dd4348b22b567666737a4, type: 3}
   - {fileID: 8300000, guid: 5621bd2f468b6a94ab03cfadb672ea85, type: 3}
-  hitByShurikenSounds: []
+  hitByShurikenSounds:
+  - {fileID: 8300000, guid: 4fab93e4d1fe40b439a944a6f8d462b9, type: 3}
+  - {fileID: 8300000, guid: e26770597e5828e47bf6e848449a8d97, type: 3}
+  - {fileID: 8300000, guid: d613828f909930b4f8ef080b45d41db3, type: 3}
+  - {fileID: 8300000, guid: 2cafecccbdff61e4795e70ccc155d7e4, type: 3}
+  girlAttackSound:
+  - {fileID: 8300000, guid: 90fb0f61cfb408247b33527933f044c4, type: 3}
+  - {fileID: 8300000, guid: 32bf4d8a6b11d314983bcf001967a6d5, type: 3}
+  - {fileID: 8300000, guid: 251591b950435ed47bb461e06b974849, type: 3}
+  - {fileID: 8300000, guid: d28962ea782e52942a4db6b6cbf042bc, type: 3}
+  - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
 --- !u!82 &1559162610
 AudioSource:
   m_ObjectHideFlags: 0
