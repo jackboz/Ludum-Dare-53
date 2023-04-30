@@ -45,6 +45,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
         //soundManager.PlayShurikenThrowSound();
         Vector3 pos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
         Instantiate(ninjaStar, spawn.position, Quaternion.identity).AddForce((pos - transform.position).normalized * speed, ForceMode.Force);
+        soundManager.PlayShurikenThrowSound();
     }
 
     public void OnPoke(Vector3 impulse)

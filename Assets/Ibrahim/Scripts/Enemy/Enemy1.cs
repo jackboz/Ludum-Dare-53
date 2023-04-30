@@ -16,6 +16,7 @@ public class Enemy1 : MonoBehaviour, IPokeble
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
         agent.speed = agent.speed + Random.Range(-.5f, .5f);
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
