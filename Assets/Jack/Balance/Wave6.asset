@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57e6979162d6f884a8de5cddee6f1b2d, type: 3}
-  m_Name: Wave5
+  m_Name: Wave6
   m_EditorClassIdentifier: 
-  spawnType: 1
-  NumberOfEnemies1: 2
-  NumberOfRangedEnemies: 2
+  spawnType: 0
+  NumberOfEnemies1: 5
+  NumberOfRangedEnemies: 3
   Enemies1SpeedBeforeSteal:
   - 3.5
   Enemies1SpeedAfterSteal:

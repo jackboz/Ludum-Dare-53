@@ -19,7 +19,8 @@ public class Enemy_Spawner : MonoBehaviour
 
     private void Awake()
     {
-        wavesLabel = GameObject.Find("WavesCount").GetComponent<TextMeshProUGUI>();
+        GameObject go = GameObject.Find("WavesCount");
+        if (go) wavesLabel = go.GetComponent<TextMeshProUGUI>();
         if (wavesLabel) wavesLabel.gameObject.SetActive(false);
     }
 
@@ -32,6 +33,7 @@ public class Enemy_Spawner : MonoBehaviour
                 timer += Time.deltaTime;
                 if (timer > pauseBetweenWaves)
                 {
+                    Debug.Log("New wave " + currentWave);
                     InitiateEnemyWave();
                     timer = 0;
                 }
