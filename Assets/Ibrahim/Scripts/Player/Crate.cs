@@ -7,15 +7,19 @@ public class Crate : MonoBehaviour
     public GameObject[] dumplings;
     public GameObject deathScreen;
     public GameObject bunsAmountUI;
+    [SerializeField] private GameObject camPos;
 
     public void PickUp()
     {
         Destroy(GetComponent<BoxCollider>());
+        camPos.SetActive(false);
     }
 
     public void Drop()
     {
+
         gameObject.AddComponent<BoxCollider>();
+        camPos.SetActive(true);
     }
 
     public void StealGoods()
@@ -49,8 +53,10 @@ public class Crate : MonoBehaviour
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
+        camPos.transform.position = new Vector3(0, 0, transform.position.z - 10);
+
         if (goodsAmount <= 0)
         {
             Debug.LogError("YouLost");
@@ -67,6 +73,5 @@ public class Crate : MonoBehaviour
         {
             bunsGoneTimer = 5f;
         }
-        Camera.main.transform.position = new Vector3(0, 15, transform.position.z - 10);
     }
 }
