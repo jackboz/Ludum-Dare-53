@@ -15,6 +15,7 @@ public class Player_Movement : MonoBehaviour
     {
         poke = GetComponent<Player_Poke>();
         rb = GetComponent<Rigidbody>();
+        Time.timeScale = 1;
     }
 
     public void OnMove(InputValue value)
