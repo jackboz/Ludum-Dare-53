@@ -166,6 +166,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5a18e23c-a1c4-4191-b074-5e83082ef9c3",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Poke",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d268dbd3-dbb2-4d92-9aae-816e97380400",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
@@ -177,11 +188,33 @@
                 },
                 {
                     "name": "",
+                    "id": "b6086788-1a62-40a5-bfaf-3dcf3d37fb1c",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "731f1f8a-30fb-4add-bbb2-9d2aba77e0d8",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
+                    "action": "PickDrop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cde192c-78fa-4f4f-aca4-61993d23e53a",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "PickDrop",
                     "isComposite": false,
                     "isPartOfComposite": false

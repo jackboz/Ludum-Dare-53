@@ -9,7 +9,7 @@ public class ParcelManager : MonoBehaviour
 
     private void Start()
     {
-        Vector3 pos = new Vector3(0, 0, 0);
+        Vector3 pos = new Vector3(0, 0, -20);
         Instantiate(start, pos, Quaternion.identity);
         for (int i = 0; i < amountOfParcels; i++)
         {
