@@ -95,7 +95,7 @@ public class Player_Movement : MonoBehaviour
 
     public void OnDash()
     {
-       if(!cooldown && !hasCrate) StartCoroutine(Dash(.2f)); 
+        if (!cooldown && !hasCrate) StartCoroutine(Dash(.2f));
     }
 
     public void OnPickDrop()

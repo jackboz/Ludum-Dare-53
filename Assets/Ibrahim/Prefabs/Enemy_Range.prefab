@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 800
-  ninjaStar: {fileID: 4621749279170935121, guid: 9720221db6d9160488fb5ea1a7b1aeae, type: 3}
+  ninjaStar: {fileID: 3808286488145724211, guid: 9720221db6d9160488fb5ea1a7b1aeae, type: 3}
   spawn: {fileID: 4503815460759594021}
 --- !u!136 &7288134572410123953
 CapsuleCollider:

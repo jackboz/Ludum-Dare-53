@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class Enemy_Spawner : MonoBehaviour
 {
@@ -89,7 +89,7 @@ public class Enemy_Spawner : MonoBehaviour
                 result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
                 break;
         }
-        
+
         return result;
     }
 
