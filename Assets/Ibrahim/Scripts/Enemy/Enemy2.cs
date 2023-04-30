@@ -11,12 +11,14 @@ public class Enemy2 : MonoBehaviour, IPokeble
     [SerializeField] public float speed;
     [SerializeField] private Rigidbody ninjaStar;
     [SerializeField] private Transform spawn;
+    private SoundManager soundManager;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Player_Movement>();
         agent.speed = agent.speed + Random.Range(-.5f, .5f);
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Update()
@@ -26,6 +28,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
         {
             Vector3 pos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
             Instantiate(ninjaStar, spawn.position, Quaternion.identity).AddForce((pos - transform.position).normalized * speed, ForceMode.Force);
+            soundManager.PlayShurikenThrowSound();
             timer = 2;
         }
         agent.SetDestination(cart.transform.position);
