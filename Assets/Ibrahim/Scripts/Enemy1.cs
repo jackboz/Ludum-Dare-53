@@ -23,8 +23,13 @@ public class Enemy1 : MonoBehaviour, IPokeble
     {
         if (Vector3.Distance(cart.transform.position, transform.position) < 3 && !hasTheGoods)
         {
-            cart.StealGoods();
-            hasTheGoods = true;
+            //oD Wrecjz added this to make sure the enemy cant steal non existant buns
+            if(cart.goodsAmount > 0)
+            {
+                cart.StealGoods();
+                hasTheGoods = true;
+            }
+
         }
         if (hasTheGoods)
         {

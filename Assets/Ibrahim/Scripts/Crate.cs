@@ -49,7 +49,7 @@ public class Crate : MonoBehaviour
             
             if(bunsGone <= 0)
             {
-                Time.timeScale = 0f;
+                Time.timeScale = 0;
                 deathScreen.SetActive(true);
                 bunsAmountUI.SetActive(false);
             }
