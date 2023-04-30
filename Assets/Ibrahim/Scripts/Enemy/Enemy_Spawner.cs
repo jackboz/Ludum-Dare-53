@@ -19,7 +19,7 @@ public class Enemy_Spawner : MonoBehaviour
             yield return new WaitForSeconds(8);
 
 
-            enemyCount = Mathf.Clamp(enemyCount + 1, 1, 7);
+            enemyCount = Mathf.Clamp(enemyCount + 1, 1, 6);
 
             for (int i = 0; i < enemyCount; i++)
             {
@@ -29,7 +29,7 @@ public class Enemy_Spawner : MonoBehaviour
 
             if (enemyCount > 4)
             {
-                enemyCount2 = Mathf.Clamp(enemyCount2 + 1, 1, 4);
+                enemyCount2 = Mathf.Clamp(enemyCount2 + 1, 1, 3);
                 for (int i = 0; i < enemyCount2; i++)
                 {
                     Vector3 spawnPos = GetRandomSpawnPos();
