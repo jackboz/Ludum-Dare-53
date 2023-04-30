@@ -3,19 +3,18 @@ using UnityEngine.AI;
 
 public class Enemy1 : MonoBehaviour, IPokeble
 {
-    int health = 1;
-    Crate cart;
-    NavMeshAgent agent;
-    MeshRenderer mesh;
-    [HideInInspector] public bool hasTheGoods;
+    private Crate cart;
+    private NavMeshAgent agent;
     private SoundManager soundManager;
+
+    private int health = 1;
+    private bool hasTheGoods;
 
     void Start()
     {
-        mesh = GetComponent<MeshRenderer>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
-        agent.speed = agent.speed + Random.Range(-.5f, .5f);
+        agent.speed += Random.Range(-.5f, .5f);
         soundManager = FindObjectOfType<SoundManager>();
     }
 
@@ -23,27 +22,20 @@ public class Enemy1 : MonoBehaviour, IPokeble
     void Update()
     {
 
-        if (hasTheGoods)
-        {
-            agent.SetDestination(new Vector3(0, 1, transform.position.z - 20));
-        }
+        if (hasTheGoods) agent.SetDestination(new Vector3(0, 1, transform.position.z - 20));
         else
         {
             agent.SetDestination(cart.transform.position);
 
             if (Vector3.Distance(cart.transform.position, transform.position) < 3)
             {
-                //oD Wrecjz added this to make sure the enemy cant steal non existant buns
                 if (cart.goodsAmount > 0)
                 {
                     cart.StealGoods();
                     hasTheGoods = true;
                     soundManager.PlayBunTakenSound();
                 }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                else Destroy(gameObject);
             }
         }
     }

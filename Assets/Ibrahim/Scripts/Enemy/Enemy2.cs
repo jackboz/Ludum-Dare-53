@@ -3,22 +3,24 @@ using UnityEngine.AI;
 
 public class Enemy2 : MonoBehaviour, IPokeble
 {
-    int health = 1;
-    Player_Movement cart;
-    NavMeshAgent agent;
-    [HideInInspector] public bool hasTheGoods;
+    private Player_Movement cart;
+    private NavMeshAgent agent;
+    private SoundManager soundManager;
+    private Animator animator;
+
+    private int health = 1;
+
     [SerializeField] public float speed;
     [SerializeField] private Rigidbody ninjaStar;
     [SerializeField] private Transform spawn;
-    private SoundManager soundManager;
-    Animator animator;
+
 
     void Start()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Player_Movement>();
-        agent.speed = agent.speed + Random.Range(-.5f, .5f);
+        agent.speed += Random.Range(-.5f, .5f);
         soundManager = FindObjectOfType<SoundManager>();
     }
 
@@ -42,7 +44,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
 
     public void Throw()
     {
-        //soundManager.PlayShurikenThrowSound();
+        soundManager.PlayShurikenThrowSound();
         Vector3 pos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
         Instantiate(ninjaStar, spawn.position, Quaternion.identity).AddForce((pos - transform.position).normalized * speed, ForceMode.Force);
         soundManager.PlayShurikenThrowSound();

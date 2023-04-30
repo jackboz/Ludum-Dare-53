@@ -34,7 +34,7 @@ public class Player_Movement : MonoBehaviour
     {
         camPos.transform.position = new Vector3(0, 0, transform.position.z - 10);
         if (!isDashing) input = inputTemp;
-        rb.velocity = speed * input * (isDashing ? 3 : 1) * (hasCrate ? .5f : 1);
+        rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * input;
 
         if(hasCrate)
         {
