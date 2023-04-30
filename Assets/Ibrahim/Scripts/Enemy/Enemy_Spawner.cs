@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Enemy_Spawner : MonoBehaviour
 {
     [SerializeField] Crate cart;
+    [SerializeField] TextMeshProUGUI wavesLabel;
     [SerializeField] private Enemy prefab;
     [SerializeField] private Enemy prefab2;
     [SerializeField] private int enemyCount;
@@ -14,6 +16,12 @@ public class Enemy_Spawner : MonoBehaviour
     public List<WaveDescription> waves;
     private int currentWave = 0;
     private float timer = 0;
+
+    private void Awake()
+    {
+        wavesLabel = GameObject.Find("WavesCount").GetComponent<TextMeshProUGUI>();
+        if (wavesLabel) wavesLabel.gameObject.SetActive(false);
+    }
 
     void Update()
     {
@@ -35,6 +43,13 @@ public class Enemy_Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(pauseBetweenWaves);
     }
+    IEnumerator ShowWaveLabel(int waveNumber)
+    {
+        wavesLabel.SetText("Wave " + waveNumber);
+        wavesLabel.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        wavesLabel.gameObject.SetActive(false);
+    }
 
     private void InitiateEnemyWave()
     {
@@ -49,6 +64,7 @@ public class Enemy_Spawner : MonoBehaviour
             Vector3 spawnPos = GetRandomSpawnPos();
             enemyList.Add(Instantiate(prefab2, spawnPos, Quaternion.identity));
         }
+        if (wavesLabel) StartCoroutine(ShowWaveLabel(currentWave + 1));
         currentWave += 1;
     }
 
