@@ -38,21 +38,28 @@ public class Player_Movement : MonoBehaviour
         camPos.transform.position = new Vector3(0, 0, transform.position.z - 10);
         if (!isDashing) input = inputTemp;
         rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * input * speedMultiplie;
-        if (speedMultiplie == 0) animator.Play("Attack");
+
+        if(input == Vector3.zero && isDashing)
+        {
+            animator.Play("Drunk");
+        }
         else
         {
-            if (hasCrate)
-            {
-                if (rb.velocity == Vector3.zero) animator.Play("Idle_Carry");
-                else animator.Play("Walk");
-            }
+            if (speedMultiplie == 0) animator.Play("Attack");
             else
             {
-                if (rb.velocity == Vector3.zero) animator.Play("Idle");
-                else animator.Play("Run");
+                if (hasCrate)
+                {
+                    if (rb.velocity == Vector3.zero) animator.Play("Idle_Carry");
+                    else animator.Play("Walk");
+                }
+                else
+                {
+                    if (rb.velocity == Vector3.zero) animator.Play("Idle");
+                    else animator.Play("Run");
+                }
             }
         }
-
 
 
         Vector3 direction = (transform.position + input) - transform.position;
