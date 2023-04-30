@@ -390,6 +390,79 @@ Transform:
   m_Father: {fileID: 560654204}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &176781234
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0115587795
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0052494137
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.15186472
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9884013
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -162.53
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_Name
+      value: SHURIKEN
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf69ac5e1230c0442821ed9411d2a411, type: 3}
 --- !u!1 &218984662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1145,7 @@ MonoBehaviour:
   ShoulderOffset: {x: 0.5, y: 15, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
-  CameraDistance: 2
+  CameraDistance: 0
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -1202,7 +1275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809312560}
   m_LocalRotation: {x: 0.4631413, y: -0, z: -0, w: 0.8862845}
-  m_LocalPosition: {x: 0.5, y: 17.060299, z: -10.813621}
+  m_LocalPosition: {x: 0.5, y: 15.4184, z: -9.67162}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 536958001}
@@ -1230,7 +1303,7 @@ MonoBehaviour:
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
-    m_Time: 3
+    m_Time: 0.5
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -1979,7 +2052,7 @@ MonoBehaviour:
   ShoulderOffset: {x: 0.5, y: 15, z: 0}
   VerticalArmLength: 0.4
   CameraSide: 1
-  CameraDistance: 2
+  CameraDistance: 0
   CameraCollisionFilter:
     serializedVersion: 2
     m_Bits: 0
@@ -2579,6 +2652,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4b06cb70509318d4591f9f558c249ab3, type: 3}
   - {fileID: 8300000, guid: e0e940769e5dd4348b22b567666737a4, type: 3}
   - {fileID: 8300000, guid: 5621bd2f468b6a94ab03cfadb672ea85, type: 3}
+  hitByShurikenSounds: []
 --- !u!82 &1559162610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2700,7 +2774,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665423400}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0.8965004, z: -1.4314246}
+  m_LocalPosition: {x: 0.05, y: 0.8965004, z: -1.2314248}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1163422320}

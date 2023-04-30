@@ -11,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     private Vector3 inputTemp;
     private Vector3 input;
     private bool isDashing;
+    private int speedMultiplie = 1;
     private bool cooldown;
     [SerializeField] private float returnDistance = 3f;
     [SerializeField] private float sphereRadius;
@@ -36,18 +37,22 @@ public class Player_Movement : MonoBehaviour
     {
         camPos.transform.position = new Vector3(0, 0, transform.position.z - 10);
         if (!isDashing) input = inputTemp;
-        rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * input;
-
-        if(hasCrate)
-        {
-            if (rb.velocity == Vector3.zero) animator.Play("Idle_Carry");
-            else animator.Play("Walk");
-        }
+        rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * input * speedMultiplie;
+        if (speedMultiplie == 0) animator.Play("Attack");
         else
         {
-            if (rb.velocity == Vector3.zero) animator.Play("Idle");
-            else animator.Play("Run");
+            if (hasCrate)
+            {
+                if (rb.velocity == Vector3.zero) animator.Play("Idle_Carry");
+                else animator.Play("Walk");
+            }
+            else
+            {
+                if (rb.velocity == Vector3.zero) animator.Play("Idle");
+                else animator.Play("Run");
+            }
         }
+
 
 
         Vector3 direction = (transform.position + input) - transform.position;
@@ -127,8 +132,11 @@ public class Player_Movement : MonoBehaviour
 
     IEnumerator PokeCooldown()
     {
+        speedMultiplie = 0;
         isCoolingDown = true;
-        yield return new WaitForSeconds(cooldownTime);
+        yield return new WaitForSeconds(cooldownTime / 2);
+        speedMultiplie = 1;
+        yield return new WaitForSeconds(cooldownTime / 2);
         isCoolingDown = false;
     }
 }
