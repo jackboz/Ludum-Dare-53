@@ -9,7 +9,6 @@ public class Enemy1 : MonoBehaviour, IPokeble
     MeshRenderer mesh;
     [HideInInspector] public bool hasTheGoods;
     [SerializeField] public Material hasGoodsMat;
-    float destoryTimer = 8f;
 
     void Start()
     {
@@ -39,11 +38,10 @@ public class Enemy1 : MonoBehaviour, IPokeble
                 {
                     cart.StealGoods();
                     hasTheGoods = true;
-                    destoryTimer -= Time.deltaTime;
-                    if (destoryTimer < 0)
-                    {
-                        Destroy(gameObject);
-                    }
+                }
+                else
+                {
+                    Destroy(gameObject);
                 }
             }
         }
