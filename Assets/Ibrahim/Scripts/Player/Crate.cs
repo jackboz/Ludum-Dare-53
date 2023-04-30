@@ -2,22 +2,10 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
-    //oD Wreckz made it public so it could be tested in inspector
     public int goodsAmount = 3;
-
-    //oD Wreckz added a timer for how long before you lose after all buns are taken
-    public float bunsGone;
-
-    //oD Wreckz added a game object for the deatrh screen
+    public float bunsGoneTimer;
     public GameObject deathScreen;
     public GameObject bunsAmountUI;
-
-    Player_Movement playerMovement;
-
-    private void Start()
-    {
-        playerMovement = FindObjectOfType<Player_Movement>();
-    }
 
     public void PickUp()
     {
@@ -45,9 +33,9 @@ public class Crate : MonoBehaviour
         if (goodsAmount <= 0)
         {
             Debug.LogError("YouLost");
-            bunsGone -= Time.deltaTime;
+            bunsGoneTimer -= Time.deltaTime;
 
-            if (bunsGone <= 0)
+            if (bunsGoneTimer <= 0)
             {
                 Time.timeScale = 0;
                 deathScreen.SetActive(true);
@@ -56,7 +44,7 @@ public class Crate : MonoBehaviour
         }
         else
         {
-            bunsGone = 5f;
+            bunsGoneTimer = 5f;
         }
         Camera.main.transform.position = new Vector3(0, 15, transform.position.z - 10);
     }

@@ -29,7 +29,7 @@ public class Player_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         if (!isDashing) input = inputTemp;
-        rb.velocity = speed * input * (isDashing ? 3 : 1) * (hasCrate ? .7f : 1);
+        rb.velocity = speed * input * (isDashing ? 3 : 1) * (hasCrate ? .5f : 1);
     }
 
     private void Update()

@@ -18,13 +18,13 @@ public class Enemy_Spawner : MonoBehaviour
             yield return new WaitUntil(() => enemyList.Count == 0);
             yield return new WaitForSeconds(8);
 
-            Vector3 carPos = cart.transform.position;
+
             enemyCount = Mathf.Clamp(enemyCount + 1, 1, 7);
 
             for (int i = 0; i < enemyCount; i++)
             {
-                Vector3 spawnPos = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
-                enemyList.Add(Instantiate(prefab, spawnPos, Quaternion.identity));
+                //Vector3 spawnPos = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
+                enemyList.Add(Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity));
             }
 
             if (enemyCount > 4)
@@ -32,10 +32,30 @@ public class Enemy_Spawner : MonoBehaviour
                 enemyCount2 = Mathf.Clamp(enemyCount2 + 1, 1, 4);
                 for (int i = 0; i < enemyCount2; i++)
                 {
-                    Vector3 spawnPos = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
+                    Vector3 spawnPos = GetRandomSpawnPos();
                     enemyList.Add(Instantiate(prefab2, spawnPos, Quaternion.identity));
                 }
             }
         }
+
+
+    }
+    private Vector3 GetRandomSpawnPos()
+    {
+        Vector3 carPos = cart.transform.position;
+        carPos.x = 0;
+        return carPos + RandomPointOnCircle(12);
+    }
+
+
+    private Vector3 RandomPointOnCircle(int radius)
+    {
+        float angle = Random.Range(0f, Mathf.PI * 2); // Random angle in radians
+
+        // Calculate the position on the circumference using trigonometry
+        float x = Mathf.Cos(angle) * radius;
+        float y = Mathf.Sin(angle) * radius;
+
+        return new Vector3(x, 0, y);
     }
 }
