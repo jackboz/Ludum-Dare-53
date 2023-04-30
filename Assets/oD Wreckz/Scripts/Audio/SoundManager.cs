@@ -5,6 +5,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] shurikenThrowSounds;
     public AudioClip[] bunTakenSounds;
     public AudioClip[] enemyDeathSounds;
+    public AudioClip[] hitByShurikenSounds;
 
     private AudioSource audioSource;
 
@@ -40,4 +41,12 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    public void PlayHitByShuriken()
+    {
+        if (hitByShurikenSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, hitByShurikenSounds.Length);
+            audioSource.PlayOneShot(hitByShurikenSounds[randomIndex]);
+        }
+    }
 }

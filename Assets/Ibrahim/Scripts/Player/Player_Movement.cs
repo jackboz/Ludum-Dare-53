@@ -21,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private GameObject camPos;
     [SerializeField] private bool isCoolingDown;
     [SerializeField] private bool hasCrate;
+    private SoundManager soundManager;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class Player_Movement : MonoBehaviour
         cart = FindObjectOfType<Crate>();
         rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void FixedUpdate()
@@ -63,6 +65,7 @@ public class Player_Movement : MonoBehaviour
             input = Vector3.zero;
             StartCoroutine(Dash(1));
             input = Vector3.zero;
+            soundManager.PlayHitByShuriken();
             Destroy(other.gameObject);
         }
     }
