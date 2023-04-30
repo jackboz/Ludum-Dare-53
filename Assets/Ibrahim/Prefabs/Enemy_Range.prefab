@@ -1292,9 +1292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0adf6239e6224d54eb23c4f6543f9f4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasTheGoods: 0
   speed: 800
-  ninjaStar: {fileID: 940353906473149162, guid: f8aac7952fb281c4db1703c62a887a28, type: 3}
+  ninjaStar: {fileID: 4621749279170935121, guid: 9720221db6d9160488fb5ea1a7b1aeae, type: 3}
   spawn: {fileID: 4503815460759594021}
 --- !u!136 &7288134572410123953
 CapsuleCollider:
