@@ -54,6 +54,7 @@ public class Enemy1 : MonoBehaviour, IPokeble
         if (health <= 0)
         {
             if (hasTheGoods) cart.ReturnGoods(1);
+            soundManager.PlayEnemyDeathSounds();
             Destroy(gameObject);
         }
     }

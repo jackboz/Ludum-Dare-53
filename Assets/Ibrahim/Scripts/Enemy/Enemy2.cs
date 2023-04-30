@@ -51,6 +51,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
     public void OnPoke(Vector3 impulse)
     {
         health--;
+        soundManager.PlayEnemyDeathSounds();
         if (health <= 0) Destroy(gameObject);
     }
 }

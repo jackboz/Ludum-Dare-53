@@ -4,6 +4,7 @@ public class SoundManager : MonoBehaviour
 {
     public AudioClip[] shurikenThrowSounds;
     public AudioClip[] bunTakenSounds;
+    public AudioClip[] enemyDeathSounds;
 
     private AudioSource audioSource;
 
@@ -29,4 +30,14 @@ public class SoundManager : MonoBehaviour
             audioSource.PlayOneShot(bunTakenSounds[randomIndex]);
         }
     }
+
+    public void PlayEnemyDeathSounds()
+    {
+        if (enemyDeathSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, enemyDeathSounds.Length);
+            audioSource.PlayOneShot(enemyDeathSounds[randomIndex]);
+        }
+    }
+
 }
