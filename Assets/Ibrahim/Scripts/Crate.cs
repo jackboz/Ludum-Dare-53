@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Crate : MonoBehaviour
 {
-    int goodsAmount = 3;
+    //oD Wreckz made it public so it could be tested in inspector
+    public int goodsAmount = 3;
 
     Player_Poke playerMovement;
 

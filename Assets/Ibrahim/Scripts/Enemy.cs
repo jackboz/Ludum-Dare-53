@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-
         spawner = FindObjectOfType<Enemy_Spawner>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
