@@ -22,28 +22,31 @@ public class Enemy1 : MonoBehaviour, IPokeble
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(cart.transform.position, transform.position) < 3 && !hasTheGoods)
-        {
-            //oD Wrecjz added this to make sure the enemy cant steal non existant buns
-            if (cart.goodsAmount > 0)
-            {
-                cart.StealGoods();
-                hasTheGoods = true;
-                destoryTimer -= Time.deltaTime;
-                if (destoryTimer < 0)
-                {
-                    Destroy(gameObject);
-                }
-            }
 
-
-        }
         if (hasTheGoods)
         {
             mesh.material = hasGoodsMat;
-            agent.SetDestination(new Vector3(0, 1, transform.position.z - 50));
+            agent.SetDestination(new Vector3(0, 1, transform.position.z - 20));
         }
-        else agent.SetDestination(cart.transform.position);
+        else
+        {
+            agent.SetDestination(cart.transform.position);
+
+            if (Vector3.Distance(cart.transform.position, transform.position) < 3)
+            {
+                //oD Wrecjz added this to make sure the enemy cant steal non existant buns
+                if (cart.goodsAmount > 0)
+                {
+                    cart.StealGoods();
+                    hasTheGoods = true;
+                    destoryTimer -= Time.deltaTime;
+                    if (destoryTimer < 0)
+                    {
+                        Destroy(gameObject);
+                    }
+                }
+            }
+        }
     }
 
     public void OnPoke(Vector3 impulse)
