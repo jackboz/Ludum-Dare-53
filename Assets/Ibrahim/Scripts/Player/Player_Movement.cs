@@ -74,7 +74,6 @@ public class Player_Movement : MonoBehaviour
         Debug.Log("OnMove");
         Vector2 temp = value.Get<Vector2>();
         if (!isDashing) input = new Vector3(temp.x, 0f, temp.y);
-        Debug.Log(input);
     }
 
     public void OnPoke()
