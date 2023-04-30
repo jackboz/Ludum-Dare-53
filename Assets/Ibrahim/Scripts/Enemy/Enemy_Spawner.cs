@@ -10,36 +10,41 @@ public class Enemy_Spawner : MonoBehaviour
     [SerializeField] private int enemyCount;
     [SerializeField] private int enemyCount2;
     [HideInInspector] public List<Enemy> enemyList;
+    [SerializeField] private float pauseBetweenWaves = 8f;
+    public List<WaveDescription> waves;
+    private int currentWave = 0;
 
-    IEnumerator Start()
+    void Update()
     {
-        while (true)
+        if (enemyList.Count == 0)
         {
-            yield return new WaitUntil(() => enemyList.Count == 0);
-            yield return new WaitForSeconds(8);
+            if (currentWave < waves.Count) InitiateEnemyWave();
+            StartCoroutine(WaitForSecs());
+        }
+    }
 
+    IEnumerator WaitForSecs()
+    {
+        yield return new WaitForSeconds(pauseBetweenWaves);
+    }
 
-            enemyCount = Mathf.Clamp(enemyCount + 1, 1, 7);
-
-            for (int i = 0; i < enemyCount; i++)
-            {
-                //Vector3 spawnPos = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
-                enemyList.Add(Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity));
-            }
-
-            if (enemyCount > 4)
-            {
-                enemyCount2 = Mathf.Clamp(enemyCount2 + 1, 1, 4);
-                for (int i = 0; i < enemyCount2; i++)
-                {
-                    Vector3 spawnPos = GetRandomSpawnPos();
-                    enemyList.Add(Instantiate(prefab2, spawnPos, Quaternion.identity));
-                }
-            }
+    private void InitiateEnemyWave()
+    {
+        for (int i = 0; i < waves[currentWave].NumberOfEnemies1; i++)
+        {
+            //Vector3 spawnPos = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
+            enemyList.Add(Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity));
         }
 
+        for (int i = 0; i < waves[currentWave].NumberOfRangedEnemies; i++)
+        {
+            Vector3 spawnPos = GetRandomSpawnPos();
+            enemyList.Add(Instantiate(prefab2, spawnPos, Quaternion.identity));
+        }
 
+        currentWave += 1;
     }
+
     private Vector3 GetRandomSpawnPos()
     {
         Vector3 carPos = cart.transform.position;

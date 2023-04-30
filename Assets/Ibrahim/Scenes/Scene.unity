@@ -1340,6 +1340,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 8b25e99361ac31d4e9ae83c46aee69ea, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e733cbadce17c0f4489f0151241910ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36078ab0369161e49a29d349ae3e0739, type: 3}
 --- !u!1 &1032516021 stripped
@@ -2137,6 +2141,9 @@ MonoBehaviour:
   enemyCount: 2
   enemyCount2: 1
   enemyList: []
+  pauseBetweenWaves: 8
+  waves:
+  - {fileID: 11400000, guid: 451c8629aaf21e74eb7f026f8e6c638a, type: 2}
 --- !u!4 &1559162607
 Transform:
   m_ObjectHideFlags: 0
@@ -5291,6 +5298,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ranged
       objectReference: {fileID: 0}
+    - target: {fileID: 7385185401304424116, guid: b995062e15dfe834cab16d8f97128100, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7385185401304424126, guid: b995062e15dfe834cab16d8f97128100, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5432,6 +5443,10 @@ PrefabInstance:
     - target: {fileID: 8409960699634419961, guid: f2df0e673ca38234ea97edc3f407d1b3, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8409960699634419961, guid: f2df0e673ca38234ea97edc3f407d1b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2df0e673ca38234ea97edc3f407d1b3, type: 3}
