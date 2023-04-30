@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasTheGoods: 0
   speed: 500
-  ninjaStar: {fileID: 940353906473149162, guid: 503c5a8e787641d48839deb81946c294, type: 3}
+  ninjaStar: {fileID: 940353906473149162, guid: f8aac7952fb281c4db1703c62a887a28, type: 3}
   spawn: {fileID: 5395379054759949930}
 --- !u!33 &7385185401304424121
 MeshFilter:
