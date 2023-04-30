@@ -8,6 +8,7 @@ public class Enemy1 : MonoBehaviour, IPokeble
     NavMeshAgent agent;
     MeshRenderer mesh;
     [HideInInspector] public bool hasTheGoods;
+    private SoundManager soundManager;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class Enemy1 : MonoBehaviour, IPokeble
                 {
                     cart.StealGoods();
                     hasTheGoods = true;
+                    soundManager.PlayBunTakenSound();
                 }
                 else
                 {
