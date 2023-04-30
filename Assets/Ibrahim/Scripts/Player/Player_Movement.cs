@@ -32,7 +32,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !cooldown) { StartCoroutine(dash(.2f)); }
+        if (Input.GetMouseButtonDown(1) && !cooldown && !hasCrate) { StartCoroutine(dash(.2f)); }
         Vector3 direction = (transform.position + input) - transform.position;
         if (direction != Vector3.zero)
         {
