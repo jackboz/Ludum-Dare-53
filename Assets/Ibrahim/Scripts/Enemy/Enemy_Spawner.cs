@@ -34,7 +34,6 @@ public class Enemy_Spawner : MonoBehaviour
     {
         for (int i = 0; i < waves[currentWave].NumberOfEnemies1; i++)
         {
-            //Vector3 spawnPos = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
             enemyList.Add(Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity));
         }
 
@@ -55,7 +54,7 @@ public class Enemy_Spawner : MonoBehaviour
         switch (waves[currentWave].spawnType)
         {
             case WaveDescription.SpawnType.Front:
-                result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
+                result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 30);
                 break;
             case WaveDescription.SpawnType.FullCircle:
                 carPos.x = 0;
@@ -66,7 +65,7 @@ public class Enemy_Spawner : MonoBehaviour
                 result = carPos + RandomPointOnHalfFrontCircle(10);
                 break;
             default:
-                result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 40);
+                result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 30);
                 break;
         }
         return result;
