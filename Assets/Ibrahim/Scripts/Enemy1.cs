@@ -9,6 +9,7 @@ public class Enemy1 : MonoBehaviour, IPokeble
     MeshRenderer mesh;
     [HideInInspector] public bool hasTheGoods;
     [SerializeField] public Material hasGoodsMat;
+    float destoryTimer = 8f;
 
     void Start()
     {
@@ -24,11 +25,17 @@ public class Enemy1 : MonoBehaviour, IPokeble
         if (Vector3.Distance(cart.transform.position, transform.position) < 3 && !hasTheGoods)
         {
             //oD Wrecjz added this to make sure the enemy cant steal non existant buns
-            if(cart.goodsAmount > 0)
+            if (cart.goodsAmount > 0)
             {
                 cart.StealGoods();
                 hasTheGoods = true;
+                destoryTimer -= Time.deltaTime;
+                if (destoryTimer < 0)
+                {
+                    Destroy(gameObject);
+                }
             }
+
 
         }
         if (hasTheGoods)
