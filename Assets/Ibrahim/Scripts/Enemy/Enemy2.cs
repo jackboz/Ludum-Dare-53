@@ -7,6 +7,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
     private NavMeshAgent agent;
     private SoundManager soundManager;
     private Animator animator;
+    Enemy enemy;
 
     private int health = 1;
 
@@ -17,6 +18,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
 
     void Start()
     {
+        enemy = GetComponent<Enemy>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Player_Movement>();
@@ -53,6 +55,6 @@ public class Enemy2 : MonoBehaviour, IPokeble
     {
         health--;
         soundManager.PlayEnemyDeathSounds();
-        if (health <= 0) Destroy(gameObject);
+        if (health <= 0) enemy.OnDeath();
     }
 }

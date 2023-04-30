@@ -6,19 +6,20 @@ public class Enemy1 : MonoBehaviour, IPokeble
     private Crate cart;
     private NavMeshAgent agent;
     private SoundManager soundManager;
+    private Enemy enemy;
 
     private int health = 1;
     private bool hasTheGoods;
 
     void Start()
     {
+        enemy = GetComponent<Enemy>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
         agent.speed += Random.Range(-.5f, .5f);
         soundManager = FindObjectOfType<SoundManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -47,7 +48,7 @@ public class Enemy1 : MonoBehaviour, IPokeble
         {
             if (hasTheGoods) cart.ReturnGoods(1);
             soundManager.PlayEnemyDeathSounds();
-            Destroy(gameObject);
+            enemy.OnDeath();
         }
     }
 }
