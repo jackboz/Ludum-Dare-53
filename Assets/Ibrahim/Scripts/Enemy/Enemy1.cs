@@ -8,7 +8,6 @@ public class Enemy1 : MonoBehaviour, IPokeble
     NavMeshAgent agent;
     MeshRenderer mesh;
     [HideInInspector] public bool hasTheGoods;
-    [SerializeField] public Material hasGoodsMat;
 
     void Start()
     {
@@ -24,7 +23,6 @@ public class Enemy1 : MonoBehaviour, IPokeble
 
         if (hasTheGoods)
         {
-            mesh.material = hasGoodsMat;
             agent.SetDestination(new Vector3(0, 1, transform.position.z - 20));
         }
         else
