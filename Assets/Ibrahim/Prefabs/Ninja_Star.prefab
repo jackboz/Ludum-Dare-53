@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1866187278423636480}
   - component: {fileID: 940353906473149162}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ninja_Star
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

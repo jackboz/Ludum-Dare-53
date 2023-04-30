@@ -9,14 +9,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3396290649895664703}
-  - component: {fileID: 6824309811320995003}
   - component: {fileID: 3396290649895664696}
   - component: {fileID: 3396290649895664697}
   - component: {fileID: 3396290649895664698}
   - component: {fileID: 3396290649895664699}
+  - component: {fileID: 6824309811320995003}
   - component: {fileID: 3396290649895664692}
   m_Layer: 6
-  m_Name: Enemy 1
+  m_Name: Enemy_Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,22 +37,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6824309811320995003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3396290649895664693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0adf6239e6224d54eb23c4f6543f9f4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasTheGoods: 0
-  speed: 500
-  ninjaStar: {fileID: 940353906473149162, guid: f8aac7952fb281c4db1703c62a887a28, type: 3}
-  spawn: {fileID: 270007132234503403}
 --- !u!33 &3396290649895664696
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -128,6 +112,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d69039b59b5a74db6d6c033bb73652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6824309811320995003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396290649895664693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0adf6239e6224d54eb23c4f6543f9f4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasTheGoods: 0
+  speed: 500
+  ninjaStar: {fileID: 940353906473149162, guid: f8aac7952fb281c4db1703c62a887a28, type: 3}
+  spawn: {fileID: 270007132234503403}
 --- !u!195 &3396290649895664692
 NavMeshAgent:
   m_ObjectHideFlags: 0

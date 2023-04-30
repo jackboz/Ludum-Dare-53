@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -7612207141551909699}
   - component: {fileID: 2713071547909341660}
   m_Layer: 6
-  m_Name: Enemy
+  m_Name: Enemy_Steal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

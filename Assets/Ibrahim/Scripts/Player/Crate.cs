@@ -12,11 +12,11 @@ public class Crate : MonoBehaviour
     public GameObject deathScreen;
     public GameObject bunsAmountUI;
 
-    Player_Poke playerMovement;
+    Player_Movement playerMovement;
 
     private void Start()
     {
-        playerMovement = FindObjectOfType<Player_Poke>();
+        playerMovement = FindObjectOfType<Player_Movement>();
     }
 
     public void PickUp()
@@ -46,8 +46,8 @@ public class Crate : MonoBehaviour
         {
             Debug.LogError("YouLost");
             bunsGone -= Time.deltaTime;
-            
-            if(bunsGone <= 0)
+
+            if (bunsGone <= 0)
             {
                 Time.timeScale = 0;
                 deathScreen.SetActive(true);

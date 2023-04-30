@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Ranged : MonoBehaviour, IPokeble
+public class Enemy2 : MonoBehaviour, IPokeble
 {
     int health = 1;
     float timer;
-    Player_Poke cart;
+    Player_Movement cart;
     NavMeshAgent agent;
     [HideInInspector] public bool hasTheGoods;
     [SerializeField] public float speed;
@@ -15,7 +15,7 @@ public class Ranged : MonoBehaviour, IPokeble
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        cart = FindObjectOfType<Player_Poke>();
+        cart = FindObjectOfType<Player_Movement>();
         agent.speed = agent.speed + Random.Range(-.5f, .5f);
     }
 
