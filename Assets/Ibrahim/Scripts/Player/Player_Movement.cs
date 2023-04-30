@@ -6,6 +6,7 @@ public class Player_Movement : MonoBehaviour
 {
     private Rigidbody rb;
     private Crate cart;
+    private Vector3 inputTemp;
     private Vector3 input;
     private bool isDashing;
     private bool cooldown;
@@ -27,6 +28,7 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!isDashing) input = inputTemp;
         rb.velocity = speed * input * (isDashing ? 3 : 1) * (hasCrate ? .7f : 1);
     }
 
@@ -73,7 +75,7 @@ public class Player_Movement : MonoBehaviour
     {
         Debug.Log("OnMove");
         Vector2 temp = value.Get<Vector2>();
-        if (!isDashing) input = new Vector3(temp.x, 0f, temp.y);
+        inputTemp = new Vector3(temp.x, 0f, temp.y);
     }
 
     public void OnPoke()
