@@ -13,7 +13,7 @@ public class ParcelManager : MonoBehaviour
         Instantiate(start, pos, Quaternion.identity);
         for (int i = 0; i < amountOfParcels; i++)
         {
-            pos.z += 25;
+            pos.z += 18.8f;
             Instantiate(inBetween[Random.Range(0, inBetween.Length)], pos, Quaternion.identity);
         }
         pos.z += 25;
