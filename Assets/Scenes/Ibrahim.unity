@@ -2520,8 +2520,6 @@ MonoBehaviour:
   wavesLabel: {fileID: 0}
   prefab: {fileID: 6603512403145903868, guid: f3d4f7eebc7d77f4098618f662971872, type: 3}
   prefab2: {fileID: 7288134572410123954, guid: 559dc776f6363c5439b80489ef99947b, type: 3}
-  enemyCount: 2
-  enemyCount2: 1
   enemyList: []
   waves:
   - {fileID: 11400000, guid: 774b9fb126d064743b2060ff8a1dd02a, type: 2}
@@ -2612,6 +2610,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 251591b950435ed47bb461e06b974849, type: 3}
   - {fileID: 8300000, guid: d28962ea782e52942a4db6b6cbf042bc, type: 3}
   - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
+  girlHitSound:
+  - {fileID: 8300000, guid: 1a8e6c9d29bfb5b4ab83c5c7d65f296f, type: 3}
   themeMusicVolume: 1
   shurikenThrowVolume: 1
   bunTakenVolume: 1

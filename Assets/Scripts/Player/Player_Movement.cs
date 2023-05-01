@@ -88,6 +88,7 @@ public class Player_Movement : MonoBehaviour
             StartCoroutine(Dash(1));
             input = Vector3.zero;
             soundManager.PlayHitByShuriken();
+            soundManager.PlayGirlHitSound();
             Destroy(other.gameObject);
         }
 

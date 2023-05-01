@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] enemyDeathSounds;
     public AudioClip[] hitByShurikenSounds;
     public AudioClip[] girlAttackSound;
+    public AudioClip[] girlHitSound;
 
     public float themeMusicVolume = 1.0f;
     public float shurikenThrowVolume = 1.0f;
@@ -56,6 +57,15 @@ public class SoundManager : MonoBehaviour
         {
             int randomIndex = Random.Range(0, bunTakenSounds.Length);
             audioSource.PlayOneShot(bunTakenSounds[randomIndex], bunTakenVolume);
+        }
+    }
+
+    public void PlayGirlHitSound()
+    {
+        if (girlHitSound.Length > 0)
+        {
+            int randomIndex = Random.Range(0, girlHitSound.Length);
+            audioSource.PlayOneShot(girlHitSound[randomIndex], 1);
         }
     }
 
