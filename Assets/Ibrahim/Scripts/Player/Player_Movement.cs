@@ -25,6 +25,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool isCoolingDown;
     [SerializeField] private bool hasCrate;
     private SoundManager soundManager;
+    [SerializeField] private int parcelToSkip = 1;
 
 
     private void Start()
@@ -95,7 +96,7 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject);
             triggerCount++;
 
-            if(triggerCount % 2 == 0)
+            if(triggerCount % parcelToSkip == 0)
             {
                 spawner.InitiateEnemyWave();
             }

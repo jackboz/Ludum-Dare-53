@@ -195,6 +195,7 @@ MonoBehaviour:
   camPos: {fileID: 301067888}
   isCoolingDown: 0
   hasCrate: 0
+  parcelToSkip: 1
 --- !u!136 &32097001
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1123,6 +1124,22 @@ PrefabInstance:
     - target: {fileID: 6200062793725615805, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615806, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 156.9888
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615806, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 38.8163
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615806, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615806, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
