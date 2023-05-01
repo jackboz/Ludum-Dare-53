@@ -880,6 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d69039b59b5a74db6d6c033bb73652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoke: {fileID: 1652849768001945628, guid: c4ae42c9089d50947b4efbe47c555738, type: 3}
 --- !u!114 &6603512403145903869
 MonoBehaviour:
   m_ObjectHideFlags: 0

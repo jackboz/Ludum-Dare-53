@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     Animator anim;
     Enemy_Spawner spawner;
     NavMeshAgent agent;
-    bool isDead;
+    [SerializeField] private GameObject smoke;
 
     void Start()
     {
@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
+        Instantiate(smoke,transform.position, Quaternion.identity);
         spawner.enemyList.Remove(this);
     }
 
