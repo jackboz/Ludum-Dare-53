@@ -117,7 +117,7 @@ public class Player_Movement : MonoBehaviour
     public void OnPoke()
     {
         Debug.Log("OnPokeInput");
-        Collider[] coll = Physics.OverlapBox(spherePos.position, new Vector3(.5f,1,1f),Quaternion.identity, 1 << 6);
+        Collider[] coll = Physics.OverlapBox(spherePos.position, new Vector3(.6f,1,1f),Quaternion.identity, 1 << 6);
 
         if (coll.Length == 0 || hasCrate || isCoolingDown) return;
         soundManager.PlayGirlAttackSounds();
