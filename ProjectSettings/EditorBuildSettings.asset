@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/oD Wreckz/Scenes/Main Menu.unity
+    path: Assets/oD Wreckz/Main Menu.unity
     guid: 79a9b99c237bfd0458ef9af8004ba561
   - enabled: 0
     path: Assets/Ibrahim/Scenes/Playground.unity

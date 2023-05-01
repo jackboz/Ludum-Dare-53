@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -9,7 +10,6 @@ public class Player_Movement : MonoBehaviour
     Animator animator;
     Enemy_Spawner spawner;
 
-    int triggerCount;
     private Vector3 inputTemp;
     private Vector3 input;
     private bool isDashing;
@@ -26,8 +26,6 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool isCoolingDown;
     [SerializeField] private bool hasCrate;
     private SoundManager soundManager;
-    [SerializeField] private int parcelToSkip = 1;
-
 
     private void Start()
     {
@@ -93,11 +91,15 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if(other.CompareTag("Trigger") && (hasCrate))
+        if(other.CompareTag("Trigger") && hasCrate)
         {
             Destroy(other.gameObject);
-            triggerCount++;
             spawner.InitiateEnemyWave();
+        }
+
+        if(other.CompareTag("End") && hasCrate)
+        {
+            SceneManager.LoadScene(2);
         }
     }
 
