@@ -21,6 +21,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Transform spherePos;
     [SerializeField] private Transform cratePos;
+    [SerializeField] private Transform cratePos2;
     [SerializeField] private GameObject camPos;
     [SerializeField] private bool isCoolingDown;
     [SerializeField] private bool hasCrate;
@@ -84,6 +85,7 @@ public class Player_Movement : MonoBehaviour
     {
         if (other.CompareTag("Bullet") && !cooldown)
         {
+            if (hasCrate) OnPickDrop();
             input = Vector3.zero;
             StartCoroutine(Dash(1));
             input = Vector3.zero;
@@ -130,6 +132,7 @@ public class Player_Movement : MonoBehaviour
             {
                 cart.Drop();
                 cart.transform.parent = null;
+                cart.transform.position = cratePos2.position;
             }
             else
             {
