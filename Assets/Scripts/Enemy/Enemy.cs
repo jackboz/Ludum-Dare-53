@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.position.z < crate.transform.position.z - 30) { Destroy(gameObject); }
+        if (transform.position.z < crate.transform.position.z - 20) { Destroy(gameObject); }
     }
 
     private void OnDestroy()
@@ -33,8 +33,11 @@ public class Enemy : MonoBehaviour
     {
         Destroy(GetComponent<Enemy1>());
         Destroy(GetComponent<Enemy2>());
-        Destroy(GetComponent<Collider>());
+        gameObject.layer = 9;
         Destroy(GetComponent<NavMeshAgent>());
+        Rigidbody rb =  gameObject.AddComponent<Rigidbody>();
+        rb.freezeRotation = true;
+        rb.AddForce(transform.forward * -1 * 3, ForceMode.Impulse);
         anim.Play("Death");
     }
 

@@ -18,8 +18,8 @@ TagManager:
   - Cart
   - Projectile
   - Enemy
-  - 
-  - 
+  - IgnorePlayer
+  - Player
   - 
   - 
   - 
