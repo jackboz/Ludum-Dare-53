@@ -195,6 +195,7 @@ MonoBehaviour:
   camPos: {fileID: 301067888}
   isCoolingDown: 0
   hasCrate: 0
+  parcelToSkip: 1
 --- !u!136 &32097001
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2687,6 +2688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d95d6e1232eca9478479405d1b3a444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  themeMusicSounds:
+  - {fileID: 8300000, guid: 54df77bcd6ef8ee4a9b5d3c5d7ce7ce0, type: 3}
   shurikenThrowSounds:
   - {fileID: 8300000, guid: ab8874ad417cabb4c9bf11fc73e7799b, type: 3}
   - {fileID: 8300000, guid: bc5c9b3f372517d4aa67b77f1d1c9657, type: 3}
@@ -2722,6 +2725,12 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 251591b950435ed47bb461e06b974849, type: 3}
   - {fileID: 8300000, guid: d28962ea782e52942a4db6b6cbf042bc, type: 3}
   - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
+  themeMusicVolume: 0.25
+  shurikenThrowVolume: 1
+  bunTakenVolume: 1
+  enemyDeathVolume: 1
+  hitByShurikenVolume: 1
+  girlAttackVolume: 1
 --- !u!82 &1559162610
 AudioSource:
   m_ObjectHideFlags: 0
