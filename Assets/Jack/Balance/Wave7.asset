@@ -15,6 +15,11 @@ MonoBehaviour:
   spawnType: 1
   NumberOfEnemies1: 3
   NumberOfRangedEnemies: 1
-  Enemies1SpeedBeforeSteal: []
-  Enemies1SpeedAfterSteal: []
-  RangedEnemiesSpeed: []
+  Enemies1SpeedBeforeSteal:
+  - 3.5
+  - 3.5
+  - 6.5
+  Enemies1SpeedAfterSteal:
+  - 3.5
+  RangedEnemiesSpeed:
+  - 3.5

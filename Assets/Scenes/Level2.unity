@@ -2527,8 +2527,8 @@ MonoBehaviour:
   prefab2: {fileID: 7288134572410123954, guid: 559dc776f6363c5439b80489ef99947b, type: 3}
   enemyList: []
   waves:
-  - {fileID: 11400000, guid: 5c99d1c5c73b80b4d8e41cf63641b4b6, type: 2}
   - {fileID: 11400000, guid: 71882fe7f4e97b54ca600e022603603e, type: 2}
+  - {fileID: 11400000, guid: 5c99d1c5c73b80b4d8e41cf63641b4b6, type: 2}
   - {fileID: 11400000, guid: 6c34faa9929c3bd45b1d72f95520d884, type: 2}
   - {fileID: 11400000, guid: 59eee34f33fedf24493bd04a52b0c90c, type: 2}
 --- !u!4 &1559162607
@@ -3951,7 +3951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bcfb20a468b874f91b97de48734dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goodsAmount: 3
+  goodsAmount: 6
   bunsGoneTimer: 0
   dumplings:
   - {fileID: 4237676873265867903}
