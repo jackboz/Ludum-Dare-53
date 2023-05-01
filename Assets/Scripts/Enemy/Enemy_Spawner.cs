@@ -74,7 +74,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     private Vector3 RandomPointOnCircle(int radius)
     {
-        float angle = Random.Range(0f, Mathf.PI * 2); 
+        float angle = Random.Range(0f, Mathf.PI * 2);
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
         return new Vector3(x, 0, y);
@@ -82,7 +82,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     private Vector3 RandomPointOnHalfFrontCircle(int radius)
     {
-        float angle = Random.Range(0f, Mathf.PI); 
+        float angle = Random.Range(0f, Mathf.PI);
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
         return new Vector3(x, 0, y);

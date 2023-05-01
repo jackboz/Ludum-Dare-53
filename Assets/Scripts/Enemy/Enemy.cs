@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
         anim = GetComponent<Animator>();
-        agent.speed = agent.speed + Random.Range(-.5f, .5f);
+        agent.speed += Random.Range(-1.0f, 1.0f);
     }
 
     private void FixedUpdate()
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(smoke,transform.position, Quaternion.identity);
+        Instantiate(smoke, transform.position, Quaternion.identity);
         spawner.enemyList.Remove(this);
     }
 

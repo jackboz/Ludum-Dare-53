@@ -91,13 +91,13 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if(other.CompareTag("Trigger") && hasCrate)
+        if (other.CompareTag("Trigger") && hasCrate)
         {
             Destroy(other.gameObject);
             spawner.InitiateEnemyWave();
         }
 
-        if(other.CompareTag("End") && hasCrate)
+        if (other.CompareTag("End") && hasCrate)
         {
             SceneManager.LoadScene(2);
         }
