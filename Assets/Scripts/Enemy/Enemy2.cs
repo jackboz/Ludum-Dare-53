@@ -11,12 +11,12 @@ public class Enemy2 : MonoBehaviour, IPokeble
 
     private int health = 1;
 
-    [SerializeField] public float speed;
+    [SerializeField] public float throwSpeed;
     [SerializeField] private Rigidbody ninjaStar;
     [SerializeField] private Transform spawn;
 
 
-    void Start()
+    void Awake()
     {
         enemy = GetComponent<Enemy>();
         animator = GetComponent<Animator>();
@@ -46,7 +46,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
     {
         soundManager.PlayShurikenThrowSound();
         Vector3 pos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
-        Instantiate(ninjaStar, spawn.position, Quaternion.Euler(270, 0, 0)).AddForce((pos - transform.position).normalized * speed, ForceMode.Force);
+        Instantiate(ninjaStar, spawn.position, Quaternion.Euler(270, 0, 0)).AddForce((pos - transform.position).normalized * throwSpeed, ForceMode.Force);
         soundManager.PlayShurikenThrowSound();
     }
 
