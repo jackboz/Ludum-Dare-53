@@ -26,6 +26,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool hasCrate;
     private SoundManager soundManager;
     private LevelManager levelManager;
+    private WinMenu winMenu;
 
 
     private void Start()
@@ -37,6 +38,7 @@ public class Player_Movement : MonoBehaviour
         Time.timeScale = 1;
         soundManager = FindObjectOfType<SoundManager>();
         levelManager = FindObjectOfType<LevelManager>();
+        winMenu = FindObjectOfType<WinMenu>();
     }
 
     private void FixedUpdate()
@@ -103,7 +105,8 @@ public class Player_Movement : MonoBehaviour
         if (other.CompareTag("End") && hasCrate && cart.goodsAmount > 0)
         {
             LevelManager.TotalBuns += cart.goodsAmount;
-            levelManager.LoadNextLevel();
+            Time.timeScale = 0;
+            winMenu.ShowWinEndText();
         }
     }
 
