@@ -114,6 +114,43 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
     min: 0
+--- !u!114 &-4021141353444446298
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f8317041eee140a38873daddb4b3a5f, type: 3}
+  m_Name: StylizedDetail
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 3
+    min: 0
+    max: 3
+  blur:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 2
+  edgePreserve:
+    m_OverrideState: 1
+    m_Value: 1.25
+    min: 0
+    max: 2
+  rangeStart:
+    m_OverrideState: 0
+    m_Value: 10
+    min: 0
+  rangeEnd:
+    m_OverrideState: 0
+    m_Value: 30
+    min: 0
 --- !u!114 &-1014228146260707598
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -198,6 +235,8 @@ MonoBehaviour:
   - {fileID: -5891865747363795109}
   - {fileID: -371066047734347447}
   - {fileID: 1570424185796869250}
+  - {fileID: -4021141353444446298}
+  - {fileID: 3968128612405840890}
 --- !u!114 &1570424185796869250
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -228,3 +267,52 @@ MonoBehaviour:
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
+--- !u!114 &3968128612405840890
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8f6e43869a48f991285995d4df1e93, type: 3}
+  m_Name: ColorGrading
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.175
+    min: 0
+    max: 1
+  blueShadows:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  greenShadows:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  redHighlights:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  contrast:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  vibrance:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
+  saturation:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+    max: 1
