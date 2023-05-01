@@ -9,21 +9,22 @@ public class Enemy1 : MonoBehaviour, IPokeble
     private Enemy enemy;
 
     private int health = 1;
+    float randomXEscape;
     private bool hasTheGoods;
 
     void Start()
     {
         enemy = GetComponent<Enemy>();
+        randomXEscape = Random.Range(-9.0f, 9.0f);
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Crate>();
-        agent.speed += Random.Range(-.5f, .5f);
         soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Update()
     {
 
-        if (hasTheGoods) agent.SetDestination(new Vector3(0, 1, transform.position.z - 20));
+        if (hasTheGoods) agent.SetDestination(new Vector3(randomXEscape, 1, transform.position.z - 20));
         else
         {
             agent.SetDestination(cart.transform.position);

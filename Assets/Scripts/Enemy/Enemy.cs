@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         crate = FindObjectOfType<Crate>();
         anim = GetComponent<Animator>();
-        agent.speed += Random.Range(-1.0f, 1.0f);
+        agent.speed += Random.Range(-.5f, 1.0f);
     }
 
     private void FixedUpdate()

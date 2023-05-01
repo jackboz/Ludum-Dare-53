@@ -27,6 +27,8 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool hasCrate;
     private SoundManager soundManager;
 
+
+
     private void Start()
     {
         spawner = FindObjectOfType<Enemy_Spawner>();
@@ -35,6 +37,7 @@ public class Player_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
         soundManager = FindObjectOfType<SoundManager>();
+
     }
 
     private void FixedUpdate()

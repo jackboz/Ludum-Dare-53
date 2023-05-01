@@ -22,7 +22,6 @@ public class Enemy2 : MonoBehaviour, IPokeble
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         cart = FindObjectOfType<Player_Movement>();
-        agent.speed += Random.Range(-.5f, .5f);
         soundManager = FindObjectOfType<SoundManager>();
     }
 
