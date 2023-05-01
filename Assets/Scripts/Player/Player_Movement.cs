@@ -100,7 +100,7 @@ public class Player_Movement : MonoBehaviour
             spawner.InitiateEnemyWave();
         }
 
-        if (other.CompareTag("End") && hasCrate)
+        if (other.CompareTag("End") && hasCrate && cart.goodsAmount > 0)
         {
             LevelManager.TotalBuns += cart.goodsAmount;
             levelManager.LoadNextLevel();
