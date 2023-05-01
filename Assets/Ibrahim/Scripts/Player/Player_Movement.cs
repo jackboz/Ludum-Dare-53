@@ -144,7 +144,6 @@ public class Player_Movement : MonoBehaviour
             }
             hasCrate = !hasCrate;
         }
-        camPos.SetActive(hasCrate);
     }
 
     IEnumerator Dash(float time)
