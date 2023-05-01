@@ -2527,10 +2527,10 @@ MonoBehaviour:
   prefab2: {fileID: 7288134572410123954, guid: 559dc776f6363c5439b80489ef99947b, type: 3}
   enemyList: []
   waves:
+  - {fileID: 11400000, guid: 873ee69505d66a74c8323b2ba1cedf06, type: 2}
   - {fileID: 11400000, guid: a9c16e51b6c545449a9bc78a6f62a7e6, type: 2}
-  - {fileID: 11400000, guid: a9c16e51b6c545449a9bc78a6f62a7e6, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 39c62bd38798873458d2a40472d05d68, type: 2}
+  - {fileID: 11400000, guid: 04fafc4df29775a4ab014f43056d8787, type: 2}
 --- !u!4 &1559162607
 Transform:
   m_ObjectHideFlags: 0
@@ -2577,6 +2577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeMusicSounds:
   - {fileID: 8300000, guid: 54df77bcd6ef8ee4a9b5d3c5d7ce7ce0, type: 3}
+  menuMusicSounds: []
   shurikenThrowSounds:
   - {fileID: 8300000, guid: ab8874ad417cabb4c9bf11fc73e7799b, type: 3}
   - {fileID: 8300000, guid: bc5c9b3f372517d4aa67b77f1d1c9657, type: 3}
@@ -2614,12 +2615,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
   girlHitSound:
   - {fileID: 8300000, guid: 1a8e6c9d29bfb5b4ab83c5c7d65f296f, type: 3}
+  dropBoxSound: []
+  liftBoxSound: []
   themeMusicVolume: 1
+  menuMusicVolume: 1
   shurikenThrowVolume: 1
   bunTakenVolume: 1
   enemyDeathVolume: 1
   hitByShurikenVolume: 1
   girlAttackVolume: 1
+  girlHitVolume: 1
+  dropBoxVolume: 1
+  liftBoxVolume: 1
 --- !u!82 &1559162610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4680,7 +4687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6875788553037980295}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.19, z: -4.11}
+  m_LocalPosition: {x: 0, y: 0.19, z: -6.1}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 3568135157633660613}
