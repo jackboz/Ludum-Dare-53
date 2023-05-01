@@ -11,6 +11,7 @@ public class EndScreen : MonoBehaviour
     void Start()
     {
         gotDumplings.SetText("You saved " + LevelManager.TotalBuns + " dumplings!");
+        Time.timeScale = 1.0f;
     }
 
 }
