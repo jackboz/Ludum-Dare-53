@@ -33,11 +33,8 @@ public class Enemy : MonoBehaviour
     {
         Destroy(GetComponent<Enemy1>());
         Destroy(GetComponent<Enemy2>());
-        gameObject.layer = 9;
+        Destroy(GetComponent<Collider>());
         Destroy(GetComponent<NavMeshAgent>());
-        Rigidbody rb =  gameObject.AddComponent<Rigidbody>();
-        rb.freezeRotation = true;
-        rb.AddForce(transform.forward * -1 * 3, ForceMode.Impulse);
         anim.Play("Death");
     }
 
