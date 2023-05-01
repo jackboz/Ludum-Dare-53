@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
@@ -33,13 +34,16 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        if(themeMusicSounds.Length >0)
+        string currentSceneName = SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "Level1" || currentSceneName == "Level 2" || currentSceneName == "Level 3")
         {
-             PlayThemeMusicSound();
+            PlayThemeMusicSound();
         }
-        if (themeMusicSounds.Length > 0)
+
+        if (currentSceneName == "Level1" || currentSceneName == "Level 2" || currentSceneName == "Level 3")
         {
-             PlayMenuMusicSound();
+            PlayMenuMusicSound();
         }
     }
 
