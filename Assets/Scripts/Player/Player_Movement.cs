@@ -121,7 +121,7 @@ public class Player_Movement : MonoBehaviour
 
         if (coll.Length == 0 || hasCrate || isCoolingDown) return;
         soundManager.PlayGirlAttackSounds();
-        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(transform.forward);
+        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(collider.transform.position - transform.position);
         StartCoroutine(PokeCooldown());
     }
 

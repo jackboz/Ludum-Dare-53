@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     Enemy_Spawner spawner;
     NavMeshAgent agent;
     [SerializeField] private GameObject smoke;
+    public Vector3 dyingVector;
+
 
     void Awake()
     {
@@ -50,5 +52,10 @@ public class Enemy : MonoBehaviour
     public void SetSpeed(float speed)
     {
         agent.speed = speed;
+    }
+
+    public void SetDyingVector(Vector3 vec)
+    {
+        dyingVector = vec;
     }
 }

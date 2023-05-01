@@ -54,6 +54,8 @@ public class Enemy2 : MonoBehaviour, IPokeble
     {
         health--;
         soundManager.PlayEnemyDeathSounds();
+        impulse.y = 0;
+        enemy.SetDyingVector(impulse);
         if (health <= 0) enemy.OnDeath();
     }
 }

@@ -49,6 +49,8 @@ public class Enemy1 : MonoBehaviour, IPokeble
         {
             if (hasTheGoods) cart.ReturnGoods(1);
             soundManager.PlayEnemyDeathSounds();
+            impulse.y = 0;
+            enemy.SetDyingVector(impulse);
             enemy.OnDeath();
         }
     }
