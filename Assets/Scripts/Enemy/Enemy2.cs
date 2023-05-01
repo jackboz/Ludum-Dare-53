@@ -3,11 +3,11 @@ using UnityEngine.AI;
 
 public class Enemy2 : MonoBehaviour, IPokeble
 {
-    private Player_Movement cart;
+    private Player_Movement player;
     private NavMeshAgent agent;
     private SoundManager soundManager;
     private Animator animator;
-    Enemy enemy;
+    private Enemy enemy;
 
     private int health = 1;
 
@@ -21,31 +21,31 @@ public class Enemy2 : MonoBehaviour, IPokeble
         enemy = GetComponent<Enemy>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        cart = FindObjectOfType<Player_Movement>();
+        player = FindObjectOfType<Player_Movement>();
         soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Update()
     {
-        AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
-        string currentStateName = "test";
-        if (clipInfo.Length > 0)
-        {
-            currentStateName = clipInfo[0].clip.name;
-        }
         if (agent.velocity != Vector3.zero) animator.Play("Run");
         else
         {
-            transform.LookAt(cart.transform);
-            if (currentStateName != "Idle" && currentStateName != "Throw") animator.Play("Idle");
+            transform.LookAt(player.transform);
+            AnimatorClipInfo[] clipInfo = animator.GetCurrentAnimatorClipInfo(0);
+
+            if (clipInfo.Length > 0)
+            {
+                string currentStateName = clipInfo[0].clip.name;
+                if (currentStateName != "Idle" && currentStateName != "Throw") animator.Play("Idle");
+            }
         }
-        agent.SetDestination(cart.transform.position);
+        agent.SetDestination(player.transform.position);
     }
 
     public void Throw()
     {
         soundManager.PlayShurikenThrowSound();
-        Vector3 pos = new Vector3(cart.transform.position.x, 0, cart.transform.position.z);
+        Vector3 pos = new Vector3(player.transform.position.x, 0, player.transform.position.z);
         Instantiate(ninjaStar, spawn.position, Quaternion.Euler(270, 0, 0)).AddForce((pos - transform.position).normalized * speed, ForceMode.Force);
         soundManager.PlayShurikenThrowSound();
     }
