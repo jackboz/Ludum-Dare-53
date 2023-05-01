@@ -130,7 +130,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 0.48
     min: 0
     max: 3
   blur:
@@ -144,12 +144,12 @@ MonoBehaviour:
     min: 0
     max: 2
   rangeStart:
-    m_OverrideState: 0
-    m_Value: 10
+    m_OverrideState: 1
+    m_Value: 0
     min: 0
   rangeEnd:
-    m_OverrideState: 0
-    m_Value: 30
+    m_OverrideState: 1
+    m_Value: 40
     min: 0
 --- !u!114 &-1014228146260707598
 MonoBehaviour:
