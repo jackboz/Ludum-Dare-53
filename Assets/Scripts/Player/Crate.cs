@@ -7,15 +7,22 @@ public class Crate : MonoBehaviour
     public GameObject[] dumplings;
     public GameObject deathScreen;
     public GameObject bunsAmountUI;
+    private SoundManager soundManager;
+
+    private void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
 
     public void PickUp()
     {
+        soundManager.PlayLiftBoxSounds();
         Destroy(GetComponent<BoxCollider>());
     }
 
     public void Drop()
     {
-
+        soundManager.PlayDropBoxSounds();
         gameObject.AddComponent<BoxCollider>();
     }
 

@@ -3,19 +3,26 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioClip[] themeMusicSounds;
+    public AudioClip[] menuMusicSounds;
     public AudioClip[] shurikenThrowSounds;
     public AudioClip[] bunTakenSounds;
     public AudioClip[] enemyDeathSounds;
     public AudioClip[] hitByShurikenSounds;
     public AudioClip[] girlAttackSound;
     public AudioClip[] girlHitSound;
+    public AudioClip[] dropBoxSound;
+    public AudioClip[] liftBoxSound;
 
     public float themeMusicVolume = 1.0f;
+    public float menuMusicVolume = 1.0f;
     public float shurikenThrowVolume = 1.0f;
     public float bunTakenVolume = 1.0f;
     public float enemyDeathVolume = 1.0f;
     public float hitByShurikenVolume = 1.0f;
     public float girlAttackVolume = 1.0f;
+    public float girlHitVolume = 1.0f;
+    public float dropBoxVolume = 1.0f;
+    public float liftBoxVolume = 1.0f;
 
     private AudioSource audioSource;
 
@@ -27,6 +34,7 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         PlayThemeMusicSound();
+        PlayMenuMusicSound();
     }
 
     public void PlayThemeMusicSound()
@@ -39,6 +47,19 @@ public class SoundManager : MonoBehaviour
             audioSource.loop = true;
             audioSource.Play();
             Debug.Log("Play theme");
+        }
+    }
+
+    public void PlayMenuMusicSound()
+    {
+        if (menuMusicSounds.Length > 0)
+        {
+            int randomIndex = Random.Range(0, menuMusicSounds.Length);
+            audioSource.clip = menuMusicSounds[randomIndex];
+            audioSource.volume = menuMusicVolume;
+            audioSource.loop = true;
+            audioSource.Play();
+            Debug.Log("Play menu theme");
         }
     }
 
@@ -65,7 +86,7 @@ public class SoundManager : MonoBehaviour
         if (girlHitSound.Length > 0)
         {
             int randomIndex = Random.Range(0, girlHitSound.Length);
-            audioSource.PlayOneShot(girlHitSound[randomIndex], 1);
+            audioSource.PlayOneShot(girlHitSound[randomIndex], girlHitVolume);
         }
     }
 
@@ -93,6 +114,24 @@ public class SoundManager : MonoBehaviour
         {
             int randomIndex = Random.Range(0, hitByShurikenSounds.Length);
             audioSource.PlayOneShot(hitByShurikenSounds[randomIndex], hitByShurikenVolume);
+        }
+    }
+
+    public void PlayDropBoxSounds()
+    {
+        if (dropBoxSound.Length > 0)
+        {
+            int randomIndex = Random.Range(0, dropBoxSound.Length);
+            audioSource.PlayOneShot(dropBoxSound[randomIndex], dropBoxVolume);
+        }
+    }
+
+    public void PlayLiftBoxSounds()
+    {
+        if (liftBoxSound.Length > 0)
+        {
+            int randomIndex = Random.Range(0, liftBoxSound.Length);
+            audioSource.PlayOneShot(liftBoxSound[randomIndex], liftBoxVolume);
         }
     }
 }
