@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnDistance: 3
-  sphereRadius: 0.5
+  sphereRadius: 0.7
   cooldownTime: 0.2
   speed: 6
   spherePos: {fileID: 929815525}
@@ -2687,7 +2687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 2843525211915414008, guid: 7e9ff2033f6e1024881625734488a477, type: 3}
-  amountOfParcels: 14
+  amountOfParcels: 7
   inBetween:
   - {fileID: 2668124138659343321, guid: c8437e3bb2422fa49a4d07346aaf8063, type: 3}
   - {fileID: 2843525211915414008, guid: 895039787e66af543a186ced19d6a258, type: 3}
