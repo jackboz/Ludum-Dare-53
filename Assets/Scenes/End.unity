@@ -3627,7 +3627,6 @@ GameObject:
   - component: {fileID: 1559162607}
   - component: {fileID: 1559162608}
   - component: {fileID: 1559162611}
-  - component: {fileID: 1559162609}
   - component: {fileID: 1559162610}
   m_Layer: 0
   m_Name: GameManager
@@ -3668,74 +3667,6 @@ MonoBehaviour:
   - {fileID: 2668124138659343321, guid: c8437e3bb2422fa49a4d07346aaf8063, type: 3}
   - {fileID: 2843525211915414008, guid: 895039787e66af543a186ced19d6a258, type: 3}
   end: {fileID: 2843525211915414008, guid: 7be19d3855822f64c8a50e526c45c41c, type: 3}
---- !u!114 &1559162609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559162605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d95d6e1232eca9478479405d1b3a444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  themeMusicSounds:
-  - {fileID: 8300000, guid: 54df77bcd6ef8ee4a9b5d3c5d7ce7ce0, type: 3}
-  menuMusicSounds: []
-  shurikenThrowSounds:
-  - {fileID: 8300000, guid: ab8874ad417cabb4c9bf11fc73e7799b, type: 3}
-  - {fileID: 8300000, guid: bc5c9b3f372517d4aa67b77f1d1c9657, type: 3}
-  - {fileID: 8300000, guid: 8abe732f8be5942478cd8f0a0dd7f16f, type: 3}
-  - {fileID: 8300000, guid: f12904ebb8d0ac64db892ce83d0f9a9a, type: 3}
-  - {fileID: 8300000, guid: c73a8262b15d0074ebd81da9a758d7b9, type: 3}
-  - {fileID: 8300000, guid: bac7f9e8fdf8f274eb6d10952a83fbe2, type: 3}
-  - {fileID: 8300000, guid: cbcdbd0bce7f5ab48a20315533917d23, type: 3}
-  bunTakenSounds:
-  - {fileID: 8300000, guid: 52ba52e2eeffb51479baf1a987ce1106, type: 3}
-  - {fileID: 8300000, guid: b2bd56420e0b3084793ea1c601096809, type: 3}
-  - {fileID: 8300000, guid: 8ef0b254d1d9e504080f30b88d0e3dd9, type: 3}
-  - {fileID: 8300000, guid: a6ad40d06becf4047a9cf1d85685a338, type: 3}
-  - {fileID: 8300000, guid: 84ccf57b5c97be44580de452dddd6803, type: 3}
-  enemyDeathSounds:
-  - {fileID: 8300000, guid: 9e7804542d11dba458f0b819ad69ba19, type: 3}
-  - {fileID: 8300000, guid: 8f917f144e1a06542953dc76032ea3d1, type: 3}
-  - {fileID: 8300000, guid: 4c47fadb91ae40142b7a887fe1ef62c9, type: 3}
-  - {fileID: 8300000, guid: 24725d6d7b144a242a304f441ce1dd45, type: 3}
-  - {fileID: 8300000, guid: 83646ce5338a6bd419f5562c1f01888a, type: 3}
-  - {fileID: 8300000, guid: ffd969cd0a0dd0c4a8c44f5b167aedcd, type: 3}
-  - {fileID: 8300000, guid: 4b06cb70509318d4591f9f558c249ab3, type: 3}
-  - {fileID: 8300000, guid: e0e940769e5dd4348b22b567666737a4, type: 3}
-  - {fileID: 8300000, guid: 5621bd2f468b6a94ab03cfadb672ea85, type: 3}
-  hitByShurikenSounds:
-  - {fileID: 8300000, guid: 4fab93e4d1fe40b439a944a6f8d462b9, type: 3}
-  - {fileID: 8300000, guid: e26770597e5828e47bf6e848449a8d97, type: 3}
-  - {fileID: 8300000, guid: d613828f909930b4f8ef080b45d41db3, type: 3}
-  - {fileID: 8300000, guid: 2cafecccbdff61e4795e70ccc155d7e4, type: 3}
-  girlAttackSound:
-  - {fileID: 8300000, guid: 90fb0f61cfb408247b33527933f044c4, type: 3}
-  - {fileID: 8300000, guid: 32bf4d8a6b11d314983bcf001967a6d5, type: 3}
-  - {fileID: 8300000, guid: 251591b950435ed47bb461e06b974849, type: 3}
-  - {fileID: 8300000, guid: d28962ea782e52942a4db6b6cbf042bc, type: 3}
-  - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
-  girlHitSound:
-  - {fileID: 8300000, guid: 1a8e6c9d29bfb5b4ab83c5c7d65f296f, type: 3}
-  dropBoxSound:
-  - {fileID: 8300000, guid: 62804809dbf4c304c9ead6ec37a5bdd5, type: 3}
-  - {fileID: 8300000, guid: f1dc5536fbebcc64e8eaf3d6277c4a9f, type: 3}
-  liftBoxSound:
-  - {fileID: 8300000, guid: cbf9339182d11da4384cbb2475e20354, type: 3}
-  - {fileID: 8300000, guid: 1c025132c53f3b54993ae7e4823d2091, type: 3}
-  themeMusicVolume: 0.3
-  menuMusicVolume: 1
-  shurikenThrowVolume: 1
-  bunTakenVolume: 1
-  enemyDeathVolume: 1
-  hitByShurikenVolume: 1
-  girlAttackVolume: 1
-  girlHitVolume: 1
-  dropBoxVolume: 1
-  liftBoxVolume: 1
 --- !u!82 &1559162610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3746,9 +3677,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8df56045ae77d824e8e4bec882e1039d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.47
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
