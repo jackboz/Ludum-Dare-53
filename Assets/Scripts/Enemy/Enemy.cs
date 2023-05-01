@@ -9,12 +9,16 @@ public class Enemy : MonoBehaviour
     NavMeshAgent agent;
     [SerializeField] private GameObject smoke;
 
-    void Start()
+    void Awake()
     {
         spawner = FindObjectOfType<Enemy_Spawner>();
         agent = GetComponent<NavMeshAgent>();
         crate = FindObjectOfType<Crate>();
         anim = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
         agent.speed += Random.Range(-.5f, 1.0f);
     }
 
@@ -41,5 +45,10 @@ public class Enemy : MonoBehaviour
     public void Des()
     {
         Destroy(gameObject);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        agent.speed = speed;
     }
 }

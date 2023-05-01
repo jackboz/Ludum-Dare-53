@@ -30,9 +30,14 @@ public class Enemy_Spawner : MonoBehaviour
 
     public void InitiateEnemyWave()
     {
+        int speedEnemies1ArraySize = waves[currentWave].Enemies1SpeedBeforeSteal.Count;
+        int j;
         for (int i = 0; i < waves[currentWave].NumberOfEnemies1; i++)
         {
-            enemyList.Add(Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity));
+            Enemy newEnemy = Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity);
+            enemyList.Add(newEnemy);
+            j = Mathf.Min(i, speedEnemies1ArraySize - 1);
+            newEnemy.SetSpeed(waves[currentWave].Enemies1SpeedBeforeSteal[j]);
         }
 
         for (int i = 0; i < waves[currentWave].NumberOfRangedEnemies; i++)
