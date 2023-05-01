@@ -37,20 +37,24 @@ public class Enemy_Spawner : MonoBehaviour
             Enemy newEnemy = Instantiate(prefab, GetRandomSpawnPos(), Quaternion.identity);
             enemyList.Add(newEnemy);
             j = Mathf.Min(i, speedEnemies1ArraySize - 1);
-            if (j > 0) newEnemy.SetSpeed(waves[currentWave].Enemies1SpeedBeforeSteal[j]);
+            if (j >= 0) newEnemy.SetSpeed(waves[currentWave].Enemies1SpeedBeforeSteal[j]);
         }
 
         speedEnemies1ArraySize = waves[currentWave].RangedEnemiesSpeed.Count;
         int throwSpeedArraySize = waves[currentWave].RangedEnemiesFireSpeed.Count;
-        for (int i = 0; i < waves[currentWave].NumberOfRangedEnemies; i++)
+         for (int i = 0; i < waves[currentWave].NumberOfRangedEnemies; i++)
         {
             Vector3 spawnPos = GetRandomSpawnPos();
             Enemy newEnemy = Instantiate(prefab2, spawnPos, Quaternion.identity);
             enemyList.Add(newEnemy);
             j = Mathf.Min(i, speedEnemies1ArraySize - 1);
-            if (j > 0) newEnemy.SetSpeed(waves[currentWave].RangedEnemiesSpeed[j]);
+            if (j >= 0) newEnemy.SetSpeed(waves[currentWave].RangedEnemiesSpeed[j]);
             j = Mathf.Min(i, throwSpeedArraySize - 1);
-            if (j > 0) newEnemy.GetComponent<Enemy2>().throwSpeed = waves[currentWave].RangedEnemiesFireSpeed[j];
+            if (j >= 0)
+            {
+                Enemy2 en2 = newEnemy.GetComponent<Enemy2>();
+                if (en2) en2.throwSpeed = waves[currentWave].RangedEnemiesFireSpeed[j];
+            }
         }
         if (wavesLabel) StartCoroutine(ShowWaveLabel(currentWave + 1));
         currentWave += 1;
