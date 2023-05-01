@@ -106,7 +106,12 @@ public class Player_Movement : MonoBehaviour
         {
             LevelManager.TotalBuns += cart.goodsAmount;
             Time.timeScale = 0;
-            winMenu.ShowWinEndText();
+            if (winMenu)
+            {
+                winMenu.ShowWinEndText();
+            }
+            else
+                levelManager.LoadNextLevel();
         }
     }
 
