@@ -40,10 +40,14 @@ public class Enemy_Spawner : MonoBehaviour
             newEnemy.SetSpeed(waves[currentWave].Enemies1SpeedBeforeSteal[j]);
         }
 
+        speedEnemies1ArraySize = waves[currentWave].RangedEnemiesSpeed.Count;
         for (int i = 0; i < waves[currentWave].NumberOfRangedEnemies; i++)
         {
             Vector3 spawnPos = GetRandomSpawnPos();
-            enemyList.Add(Instantiate(prefab2, spawnPos, Quaternion.identity));
+            Enemy newEnemy = Instantiate(prefab2, spawnPos, Quaternion.identity);
+            enemyList.Add(newEnemy);
+            j = Mathf.Min(i, speedEnemies1ArraySize - 1);
+            newEnemy.SetSpeed(waves[currentWave].RangedEnemiesSpeed[j]);
         }
         if (wavesLabel) StartCoroutine(ShowWaveLabel(currentWave + 1));
         currentWave += 1;

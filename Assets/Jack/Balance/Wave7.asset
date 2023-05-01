@@ -16,9 +16,9 @@ MonoBehaviour:
   NumberOfEnemies1: 3
   NumberOfRangedEnemies: 1
   Enemies1SpeedBeforeSteal:
-  - 3.5
-  - 3.5
-  - 6.5
+  - 5
+  - 5
+  - 7
   Enemies1SpeedAfterSteal:
   - 3.5
   RangedEnemiesSpeed:
