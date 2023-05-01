@@ -95,11 +95,7 @@ public class Player_Movement : MonoBehaviour
         {
             Destroy(other.gameObject);
             triggerCount++;
-
-            if(triggerCount % parcelToSkip == 0)
-            {
-                spawner.InitiateEnemyWave();
-            }
+            spawner.InitiateEnemyWave();
         }
     }
 
