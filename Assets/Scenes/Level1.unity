@@ -285,7 +285,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: The ninjas stole your dumplings!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &92644857
@@ -513,8 +513,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9ee1fa900750805499d90c81eb4ffb0d, type: 2}
-  m_sharedMaterial: {fileID: -5157958064673373847, guid: 9ee1fa900750805499d90c81eb4ffb0d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
+  m_sharedMaterial: {fileID: 7413970915447917505, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1090,9 +1090,25 @@ PrefabInstance:
       value: Panel
       objectReference: {fileID: 0}
     - target: {fileID: 6200062793725615805, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615805, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
+    - target: {fileID: 6200062793725615805, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615805, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
       propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6200062793725615805, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7413970915447917505, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
     - target: {fileID: 6200062793725615806, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
       propertyPath: m_SizeDelta.x
       value: 156.9888
@@ -1107,7 +1123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6200062793725615806, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -215
+      value: -94
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97226b2b73867e84ba54ff030650988b, type: 3}
@@ -1679,7 +1695,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Return To Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1743,7 +1759,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &910800204
@@ -2069,7 +2085,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Retry
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8042f4cdbed5b5a4ba7908790d7b4e4d, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2133,7 +2149,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1259203003
