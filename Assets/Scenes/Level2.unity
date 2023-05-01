@@ -2500,6 +2500,7 @@ GameObject:
   - component: {fileID: 1559162606}
   - component: {fileID: 1559162608}
   - component: {fileID: 1559162609}
+  - component: {fileID: 1559162611}
   - component: {fileID: 1559162610}
   m_Layer: 0
   m_Name: GameManager
@@ -2528,8 +2529,8 @@ MonoBehaviour:
   waves:
   - {fileID: 11400000, guid: 5c99d1c5c73b80b4d8e41cf63641b4b6, type: 2}
   - {fileID: 11400000, guid: 71882fe7f4e97b54ca600e022603603e, type: 2}
-  - {fileID: 11400000, guid: 59eee34f33fedf24493bd04a52b0c90c, type: 2}
   - {fileID: 11400000, guid: 6c34faa9929c3bd45b1d72f95520d884, type: 2}
+  - {fileID: 11400000, guid: 59eee34f33fedf24493bd04a52b0c90c, type: 2}
 --- !u!4 &1559162607
 Transform:
   m_ObjectHideFlags: 0
@@ -2557,7 +2558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   start: {fileID: 2843525211915414008, guid: 7e9ff2033f6e1024881625734488a477, type: 3}
-  amountOfParcels: 7
+  amountOfParcels: 4
   inBetween:
   - {fileID: 2668124138659343321, guid: c8437e3bb2422fa49a4d07346aaf8063, type: 3}
   - {fileID: 2843525211915414008, guid: 895039787e66af543a186ced19d6a258, type: 3}
@@ -2715,6 +2716,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1559162611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559162605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c016e07ad7dbb446b1a8ba98af60b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevel: End
 --- !u!1 &1579579276
 GameObject:
   m_ObjectHideFlags: 0

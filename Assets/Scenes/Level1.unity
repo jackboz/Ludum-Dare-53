@@ -2524,8 +2524,8 @@ MonoBehaviour:
   enemyList: []
   waves:
   - {fileID: 11400000, guid: 774b9fb126d064743b2060ff8a1dd02a, type: 2}
-  - {fileID: 11400000, guid: 422f7d29d7c02e44bb6bb4eea811ccea, type: 2}
   - {fileID: 11400000, guid: 1cd2a28018f14894aaff7400cb3639b1, type: 2}
+  - {fileID: 11400000, guid: 422f7d29d7c02e44bb6bb4eea811ccea, type: 2}
 --- !u!4 &1559162607
 Transform:
   m_ObjectHideFlags: 0
