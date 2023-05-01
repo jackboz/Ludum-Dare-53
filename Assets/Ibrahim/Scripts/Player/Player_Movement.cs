@@ -111,11 +111,11 @@ public class Player_Movement : MonoBehaviour
     public void OnPoke()
     {
         Debug.Log("OnPokeInput");
-        if (hasCrate || isCoolingDown) return;
-        int layerMask = 1 << 6;
+        Collider[] coll = Physics.OverlapSphere(spherePos.position, sphereRadius, 1 << 6);
+
+        if (coll.Length == 0 || hasCrate || isCoolingDown) return;
         soundManager.PlayGirlAttackSounds();
-        Collider[] coll = Physics.OverlapSphere(spherePos.position, sphereRadius, layerMask);
-        if (coll.Length != 0) foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(transform.forward);
+        foreach (Collider collider in coll) collider.GetComponent<IPokeble>()?.OnPoke(transform.forward);
         StartCoroutine(PokeCooldown());
     }
 
