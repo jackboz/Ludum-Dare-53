@@ -34,16 +34,11 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
 
-        if (currentSceneName == "Level1" || currentSceneName == "Level 2" || currentSceneName == "Level 3")
+
+        if (themeMusicSounds.Length > 0)
         {
             PlayThemeMusicSound();
-        }
-
-        if (currentSceneName == "Level1" || currentSceneName == "Level 2" || currentSceneName == "Level 3")
-        {
-            PlayMenuMusicSound();
         }
     }
 

@@ -2499,8 +2499,8 @@ GameObject:
   - component: {fileID: 1559162607}
   - component: {fileID: 1559162606}
   - component: {fileID: 1559162608}
-  - component: {fileID: 1559162609}
   - component: {fileID: 1559162611}
+  - component: {fileID: 1559162609}
   - component: {fileID: 1559162610}
   m_Layer: 0
   m_Name: GameManager
@@ -2615,9 +2615,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
   girlHitSound:
   - {fileID: 8300000, guid: 1a8e6c9d29bfb5b4ab83c5c7d65f296f, type: 3}
-  dropBoxSound: []
-  liftBoxSound: []
-  themeMusicVolume: 1
+  dropBoxSound:
+  - {fileID: 8300000, guid: 62804809dbf4c304c9ead6ec37a5bdd5, type: 3}
+  - {fileID: 8300000, guid: f1dc5536fbebcc64e8eaf3d6277c4a9f, type: 3}
+  liftBoxSound:
+  - {fileID: 8300000, guid: cbf9339182d11da4384cbb2475e20354, type: 3}
+  - {fileID: 8300000, guid: 1c025132c53f3b54993ae7e4823d2091, type: 3}
+  themeMusicVolume: 0.3
   menuMusicVolume: 1
   shurikenThrowVolume: 1
   bunTakenVolume: 1

@@ -343,7 +343,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 293505617}
-  - component: {fileID: 293505616}
   - component: {fileID: 293505615}
   m_Layer: 0
   m_Name: AudioManager
@@ -362,11 +361,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8df56045ae77d824e8e4bec882e1039d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -448,39 +447,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &293505616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 293505614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d95d6e1232eca9478479405d1b3a444, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  themeMusicSounds: []
-  menuMusicSounds:
-  - {fileID: 8300000, guid: 8df56045ae77d824e8e4bec882e1039d, type: 3}
-  shurikenThrowSounds: []
-  bunTakenSounds: []
-  enemyDeathSounds: []
-  hitByShurikenSounds: []
-  girlAttackSound: []
-  girlHitSound: []
-  dropBoxSound: []
-  liftBoxSound: []
-  themeMusicVolume: 0
-  menuMusicVolume: 0.5
-  shurikenThrowVolume: 0
-  bunTakenVolume: 0
-  enemyDeathVolume: 0
-  hitByShurikenVolume: 0
-  girlAttackVolume: 0
-  girlHitVolume: 0
-  dropBoxVolume: 1
-  liftBoxVolume: 1
 --- !u!4 &293505617
 Transform:
   m_ObjectHideFlags: 0

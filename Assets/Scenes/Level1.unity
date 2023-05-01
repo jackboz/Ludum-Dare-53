@@ -2572,6 +2572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   themeMusicSounds:
   - {fileID: 8300000, guid: 54df77bcd6ef8ee4a9b5d3c5d7ce7ce0, type: 3}
+  menuMusicSounds: []
   shurikenThrowSounds:
   - {fileID: 8300000, guid: ab8874ad417cabb4c9bf11fc73e7799b, type: 3}
   - {fileID: 8300000, guid: bc5c9b3f372517d4aa67b77f1d1c9657, type: 3}
@@ -2609,13 +2610,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fcd7559282d0baa4794192d055c25800, type: 3}
   girlHitSound:
   - {fileID: 8300000, guid: 1a8e6c9d29bfb5b4ab83c5c7d65f296f, type: 3}
+  dropBoxSound:
+  - {fileID: 8300000, guid: 62804809dbf4c304c9ead6ec37a5bdd5, type: 3}
+  - {fileID: 8300000, guid: f1dc5536fbebcc64e8eaf3d6277c4a9f, type: 3}
+  liftBoxSound:
+  - {fileID: 8300000, guid: cbf9339182d11da4384cbb2475e20354, type: 3}
+  - {fileID: 8300000, guid: 1c025132c53f3b54993ae7e4823d2091, type: 3}
   themeMusicVolume: 0.3
+  menuMusicVolume: 1
   shurikenThrowVolume: 1
   bunTakenVolume: 1
   enemyDeathVolume: 1
   hitByShurikenVolume: 1
   girlAttackVolume: 1
   girlHitVolume: 1
+  dropBoxVolume: 1
+  liftBoxVolume: 1
 --- !u!82 &1559162610
 AudioSource:
   m_ObjectHideFlags: 0
