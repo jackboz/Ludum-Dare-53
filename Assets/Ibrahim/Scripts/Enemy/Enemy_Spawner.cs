@@ -24,7 +24,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     IEnumerator ShowWaveLabel(int waveNumber)
     {
-        wavesLabel.SetText("Wave " + waveNumber);
+        wavesLabel.SetText("Go Forward");
         wavesLabel.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
         wavesLabel.gameObject.SetActive(false);

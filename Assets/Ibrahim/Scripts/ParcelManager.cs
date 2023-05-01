@@ -11,7 +11,11 @@ public class ParcelManager : MonoBehaviour
     {
         Vector3 pos = new Vector3(0, 0, -20);
         Instantiate(start, pos, Quaternion.identity);
-        for (int i = 0; i < amountOfParcels; i++)
+        pos.z += 18.8f;
+        GameObject parcel = Instantiate(inBetween[0], pos, Quaternion.identity);
+        Transform trigger = parcel.transform.Find("Trigger");
+        if (trigger) trigger.gameObject.SetActive(false);
+        for (int i = 1; i < amountOfParcels; i++)
         {
             pos.z += 18.8f;
             Instantiate(inBetween[Random.Range(0, inBetween.Length)], pos, Quaternion.identity);
