@@ -93,7 +93,7 @@ public class Player_Movement : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if(other.CompareTag("Trigger"))
+        if(other.CompareTag("Trigger") && (hasCrate))
         {
             Destroy(other.gameObject);
             triggerCount++;
