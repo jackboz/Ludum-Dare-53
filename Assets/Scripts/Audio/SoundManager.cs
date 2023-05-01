@@ -33,8 +33,14 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        PlayThemeMusicSound();
-        PlayMenuMusicSound();
+        if(themeMusicSounds.Length >0)
+        {
+             PlayThemeMusicSound();
+        }
+        if (themeMusicSounds.Length > 0)
+        {
+             PlayMenuMusicSound();
+        }
     }
 
     public void PlayThemeMusicSound()
