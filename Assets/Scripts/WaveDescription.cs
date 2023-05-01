@@ -22,4 +22,5 @@ public class WaveDescription : ScriptableObject
     public List<float> Enemies1SpeedAfterSteal;
 
     public List<float> RangedEnemiesSpeed;
+    public List<float> RangedEnemiesFireSpeed;
 }

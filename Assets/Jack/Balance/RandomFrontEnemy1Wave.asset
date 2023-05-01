@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: RandomFrontEnemy1Wave
   m_EditorClassIdentifier: 
   spawnType: 0
-  NumberOfEnemies1: 1
-  NumberOfRangedEnemies: 1
+  NumberOfEnemies1: 3
+  NumberOfRangedEnemies: 0
   Enemies1SpeedBeforeSteal:
+  - 1
   - 3.5
+  - 8
   Enemies1SpeedAfterSteal:
   - 3.5
   RangedEnemiesSpeed:
