@@ -9,8 +9,6 @@ public class Enemy_Spawner : MonoBehaviour
     [SerializeField] TextMeshProUGUI wavesLabel;
     [SerializeField] private Enemy prefab;
     [SerializeField] private Enemy prefab2;
-    [SerializeField] private int enemyCount;
-    [SerializeField] private int enemyCount2;
     [HideInInspector] public List<Enemy> enemyList;
     public List<WaveDescription> waves;
     private int currentWave = 0;
