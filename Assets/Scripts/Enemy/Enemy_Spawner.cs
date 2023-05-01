@@ -64,6 +64,10 @@ public class Enemy_Spawner : MonoBehaviour
                 carPos.x = 0;
                 result = carPos + RandomPointOnHalfFrontCircle(10);
                 break;
+            case WaveDescription.SpawnType.SideWays:
+                carPos.x = 0;
+                result = carPos + RandomPointOnSideWays(10);
+                break;
             default:
                 result = new Vector3(Random.Range(-7, 7), 1, carPos.z + 30);
                 break;
@@ -83,6 +87,16 @@ public class Enemy_Spawner : MonoBehaviour
     private Vector3 RandomPointOnHalfFrontCircle(int radius)
     {
         float angle = Random.Range(0f, Mathf.PI);
+        float x = Mathf.Cos(angle) * radius;
+        float y = Mathf.Sin(angle) * radius;
+        return new Vector3(x, 0, y);
+    }
+    private Vector3 RandomPointOnSideWays(int radius)
+    {
+        int side = Random.Range(0, 2);
+        Debug.Log("side " + side);
+        float angle = Random.Range(-Mathf.PI / 180f * 20f, Mathf.PI / 180f * 20f) + Mathf.PI * side;
+        Debug.Log("angle " + angle * 180);
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
         return new Vector3(x, 0, y);

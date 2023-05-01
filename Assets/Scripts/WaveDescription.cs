@@ -8,7 +8,8 @@ public class WaveDescription : ScriptableObject
     {
         Front,
         HalfFrontCircle,
-        FullCircle
+        FullCircle,
+        SideWays
     }
 
     public SpawnType spawnType;
