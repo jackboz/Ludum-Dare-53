@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ParcelManager : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class ParcelManager : MonoBehaviour
         Instantiate(start, pos, Quaternion.identity);
         pos.z += 18.8f;
         GameObject parcel = Instantiate(inBetween[0], pos, Quaternion.identity);
-        Transform trigger = parcel.transform.Find("Trigger");
-        if (trigger) trigger.gameObject.SetActive(false);
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name == "Level1")
+        {
+            Transform trigger = parcel.transform.Find("Trigger");
+            if (trigger) trigger.gameObject.SetActive(false);
+        }
         for (int i = 1; i < amountOfParcels; i++)
         {
             pos.z += 18.8f;

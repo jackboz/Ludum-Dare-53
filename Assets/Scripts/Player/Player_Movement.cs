@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -26,7 +25,7 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private bool isCoolingDown;
     [SerializeField] private bool hasCrate;
     private SoundManager soundManager;
-
+    private LevelManager levelManager;
 
 
     private void Start()
@@ -37,7 +36,7 @@ public class Player_Movement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         Time.timeScale = 1;
         soundManager = FindObjectOfType<SoundManager>();
-
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void FixedUpdate()
@@ -103,7 +102,7 @@ public class Player_Movement : MonoBehaviour
 
         if (other.CompareTag("End") && hasCrate)
         {
-            SceneManager.LoadScene(2);
+            levelManager.LoadNextLevel();
         }
     }
 
