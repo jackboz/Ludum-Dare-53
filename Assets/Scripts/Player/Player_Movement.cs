@@ -102,6 +102,7 @@ public class Player_Movement : MonoBehaviour
 
         if (other.CompareTag("End") && hasCrate)
         {
+            LevelManager.TotalBuns += cart.goodsAmount;
             levelManager.LoadNextLevel();
         }
     }
