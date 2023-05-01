@@ -3,7 +3,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    Crate cart;
+    Crate crate;
     Animator anim;
     Enemy_Spawner spawner;
     NavMeshAgent agent;
@@ -13,14 +13,14 @@ public class Enemy : MonoBehaviour
     {
         spawner = FindObjectOfType<Enemy_Spawner>();
         agent = GetComponent<NavMeshAgent>();
-        cart = FindObjectOfType<Crate>();
+        crate = FindObjectOfType<Crate>();
         anim = GetComponent<Animator>();
         agent.speed += Random.Range(-1.0f, 1.0f);
     }
 
     private void FixedUpdate()
     {
-        if (transform.position.z < cart.transform.position.z - 30) { Destroy(gameObject); }
+        if (transform.position.z < crate.transform.position.z - 30) { Destroy(gameObject); }
     }
 
     private void OnDestroy()

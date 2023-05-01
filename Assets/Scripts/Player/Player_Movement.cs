@@ -41,7 +41,7 @@ public class Player_Movement : MonoBehaviour
     {
         camPos.transform.position = new Vector3(0, 0, transform.position.z - 10);
         if (!isDashing) input = inputTemp;
-        rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * input * speedMultiplie;
+        rb.velocity = (hasCrate ? .5f : 1) * (isDashing ? 3 : 1) * speed * speedMultiplie * input;
 
         if (input == Vector3.zero && isDashing)
         {
@@ -139,11 +139,12 @@ public class Player_Movement : MonoBehaviour
             else
             {
                 cart.PickUp();
-                cart.transform.rotation = Quaternion.identity;
                 cart.transform.position = cratePos.position;
                 cart.transform.parent = cratePos;
-                cart.transform.rotation = Quaternion.identity;
             }
+
+            cart.transform.rotation = Quaternion.Euler(0,0,0);
+            cart.transform.localRotation = Quaternion.Euler(0,0,0);
             hasCrate = !hasCrate;
         }
     }
