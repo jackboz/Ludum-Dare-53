@@ -41,6 +41,7 @@ public class Enemy_Spawner : MonoBehaviour
         }
 
         speedEnemies1ArraySize = waves[currentWave].RangedEnemiesSpeed.Count;
+        int throwSpeedArraySize = waves[currentWave].RangedEnemiesFireSpeed.Count;
         for (int i = 0; i < waves[currentWave].NumberOfRangedEnemies; i++)
         {
             Vector3 spawnPos = GetRandomSpawnPos();
@@ -48,6 +49,8 @@ public class Enemy_Spawner : MonoBehaviour
             enemyList.Add(newEnemy);
             j = Mathf.Min(i, speedEnemies1ArraySize - 1);
             newEnemy.SetSpeed(waves[currentWave].RangedEnemiesSpeed[j]);
+            j = Mathf.Min(i, throwSpeedArraySize - 1);
+            newEnemy.GetComponent<Enemy2>().throwSpeed = waves[currentWave].RangedEnemiesFireSpeed[j];
         }
         if (wavesLabel) StartCoroutine(ShowWaveLabel(currentWave + 1));
         currentWave += 1;
