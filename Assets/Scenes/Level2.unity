@@ -2897,7 +2897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c016e07ad7dbb446b1a8ba98af60b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: End
+  nextLevel: Level3
 --- !u!1 &1579579276
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,7 +3385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149186363317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.65, y: 0, z: -4.11}
+  m_LocalPosition: {x: 0, y: 0, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5465940246507734427}
