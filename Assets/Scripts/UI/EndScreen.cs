@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class EndScreen : MonoBehaviour
 {
@@ -14,5 +15,10 @@ public class EndScreen : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    public void RTM()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
+    }
 }
 
