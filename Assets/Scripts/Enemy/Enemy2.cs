@@ -8,6 +8,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
     private SoundManager soundManager;
     private Animator animator;
     private Enemy enemy;
+    private Enemy_Spawner spawner;
 
     private int health = 1;
 
@@ -18,6 +19,7 @@ public class Enemy2 : MonoBehaviour, IPokeble
 
     void Awake()
     {
+        spawner = FindObjectOfType<Enemy_Spawner>();
         enemy = GetComponent<Enemy>();
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -27,6 +29,13 @@ public class Enemy2 : MonoBehaviour, IPokeble
 
     void Update()
     {
+        int howManyBlack = 0;
+        for(int i =  0; i < spawner.enemyList.Count; i++)
+        {
+            if (spawner.enemyList[i].GetComponent<Enemy1>()) howManyBlack++;
+        }
+        if (howManyBlack == 0) Destroy(gameObject); 
+
         if (agent.velocity != Vector3.zero) animator.Play("Run");
         else
         {
